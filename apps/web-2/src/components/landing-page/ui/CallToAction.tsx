@@ -11,21 +11,22 @@ export function CallToAction() {
             id="cta-title"
             className="scroll-my-60 text-3xl font-semibold tracking-tighter text-balance text-gray-900 md:text-4xl"
           >
-            Ready to deploy your AI agent?
+            See Wabrix in action
           </h2>
           <p className="mt-3 mb-8 text-lg text-gray-600">
-            Join hundreds of businesses automating their customer support and
-            sales with Wabrix. Start your 14-day free trial today.
+            This is a live demo of a WhatsApp-first support workspace. Sign in
+            to explore the dashboard, or read the setup guide to run the project
+            yourself.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button
               asChild
               className="text-md bg-violet-600 hover:bg-violet-700"
             >
-              <Link href="/auth/sign-in">Get Started for Free</Link>
+              <Link href="/auth/sign-in">Open the demo</Link>
             </Button>
             <Button asChild className="text-md" variant="secondary">
-              <Link href="/auth/sign-in">Schedule a Demo</Link>
+              <Link href="/docs/setup">Read setup docs</Link>
             </Button>
           </div>
         </div>

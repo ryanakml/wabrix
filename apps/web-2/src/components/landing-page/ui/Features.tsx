@@ -30,7 +30,7 @@ import Image from "next/image";
 export default function Features() {
   return (
     <section
-      aria-label="Solar Technologies Features for Farms"
+      aria-label="Wabrix product features"
       id="solutions"
       className="relative mx-auto max-w-6xl scroll-my-24"
     >
@@ -456,9 +456,9 @@ export default function Features() {
             Scale your WhatsApp operations with plug-and-play simplicity
           </p>
           <p className="mt-4 text-balance text-gray-700">
-            Connect your WhatsApp Business API and start automating in minutes.
-            Our system scales with your business, handling thousands of
-            concurrent conversations without breaking a sweat.
+            Connect your WhatsApp Business API through the guided setup. The
+            workspace is structured to keep conversations, bot configuration,
+            and knowledge sources organized as your team grows.
           </p>
         </div>
         <div className="relative col-span-2 flex items-center justify-center overflow-hidden">

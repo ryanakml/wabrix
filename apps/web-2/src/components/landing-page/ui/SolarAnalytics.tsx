@@ -24,7 +24,7 @@ export function SolarAnalytics() {
           <div className="absolute top-1 -left-[8px] h-5 w-[3px] rounded-r-sm bg-violet-500" />
         </h2>
         <p className="mt-2 max-w-lg text-3xl font-semibold tracking-tighter text-balance text-gray-900 md:text-4xl">
-          Monitor your AI performance with real-time analytics
+          Review workspace activity and delivery health
         </p>
       </div>
       <div className="*:pointer-events-none">
@@ -33,24 +33,24 @@ export function SolarAnalytics() {
       <Divider className="mt-0"></Divider>
       <div className="grid grid-cols-1 grid-rows-2 gap-6 md:grid-cols-4 md:grid-rows-1">
         <StickerCard
-          Icon={RiRobot3Fill}
-          title="AI Handling Rate"
-          description="Percentage of conversations fully resolved by AI agents without human help."
+          Icon={RiPieChartFill}
+          title="Delivery visibility"
+          description="Review sent, delivered, read, and failed message states."
         />
         <StickerCard
-          Icon={RiTranslate2}
-          title="Auto-Translation"
-          description="Real-time multi-language translation across all WhatsApp conversations."
+          Icon={RiRobot3Fill}
+          title="Token usage"
+          description="Track AI consumption against workspace limits."
         />
         <StickerCard
           Icon={RiTeamFill}
-          title="Human Handoff"
-          description="Seamlessly transition complex queries to your human support team."
+          title="Human handoff"
+          description="Request or clear handoff from the conversation view."
         />
         <StickerCard
-          Icon={RiPieChartFill}
-          title="Token Usage"
-          description="Track AI consumption and messaging volume with transparent metrics."
+          Icon={RiTranslate2}
+          title="Language-aware replies"
+          description="Configure bot language defaults for English, Indonesian, or automatic handling."
         />
       </div>
     </section>

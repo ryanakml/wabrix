@@ -4,7 +4,6 @@ import Features from "@/components/landing-page/ui/Features"
 import { Hero } from "@/components/landing-page/ui/Hero"
 import { Map } from "@/components/landing-page/ui/Map/Map"
 import { SolarAnalytics } from "@/components/landing-page/ui/SolarAnalytics"
-import Testimonial from "@/components/landing-page/ui/Testimonial"
 
 export default function Home() {
   return (
@@ -14,9 +13,6 @@ export default function Home() {
       </div>
       <div className="mt-52 px-4 xl:px-0">
         <Features />
-      </div>
-      <div className="mt-32 px-4 xl:px-0">
-        <Testimonial />
       </div>
       <FeatureDivider className="my-16 max-w-6xl" />
       <div className="px-4 xl:px-0">
