@@ -3,6 +3,7 @@ import { siteConfig } from '@/app/siteConfig';
 
 const publicRoutes = [
   '/',
+  '/about',
   '/pricing',
   '/docs',
   '/docs/setup',

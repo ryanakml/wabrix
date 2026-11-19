@@ -13,7 +13,12 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
               <DocsSidebarNav />
             </div>
           </aside>
-          <div>{children}</div>
+          <div>
+            <p className='mb-6 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-6 text-amber-900'>
+              Portfolio documentation for a live demo. This is not a commercial support offering.
+            </p>
+            {children}
+          </div>
         </div>
       </div>
     </div>
