@@ -134,8 +134,9 @@ export default function AboutPage() {
           </section>
 
           <p className='text-sm leading-6 text-gray-500'>
-            No payments are collected on this site. If you sign in, account and
-            workspace data is handled by the services described in the{' '}
+            This demo is not intended to collect payments. If you sign in,
+            account and workspace data is handled by the services described in
+            the{' '}
             <Link
               href='/privacy-policy'
               className='font-medium text-gray-700 underline decoration-gray-300 underline-offset-4 hover:text-gray-900'

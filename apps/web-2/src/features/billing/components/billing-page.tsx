@@ -277,9 +277,9 @@ export default function BillingPage() {
         <Alert className="border-amber-300 bg-amber-50 text-amber-900">
           <Icons.info className="h-4 w-4" />
           <AlertDescription>
-            <strong>Demo only — no billing.</strong> This hosted demo does not
-            process payments. Plan prices and limits below are sample values.
-            Do not enter payment details.
+            <strong>Demo only — no billing.</strong> This hosted demo is not
+            intended for real payments. Plan prices and limits below are sample
+            values. Do not enter payment details.
           </AlertDescription>
         </Alert>
 

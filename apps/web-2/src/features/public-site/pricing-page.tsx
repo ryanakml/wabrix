@@ -16,9 +16,8 @@ export function PricingPageView() {
           </h1>
           <p className='text-lg leading-8 text-gray-600'>
             Wabrix is a personal portfolio project and live demo. It has no
-            commercial plans, no customers, and no payment processing on this
-            site. Nothing on this page is an offer, and no payment details will
-            be collected.
+            commercial plans, no customers, and no real billing. Nothing on this
+            page is an offer, and no payment details should be entered.
           </p>
         </header>
 
@@ -36,8 +35,8 @@ export function PricingPageView() {
               </p>
               <p>
                 The repository also contains billing integration code for
-                demonstration. The hosted demo is not configured to charge
-                anyone.
+                demonstration. The hosted demo is not configured for real
+                billing, so do not enter payment details.
               </p>
             </CardContent>
           </Card>
