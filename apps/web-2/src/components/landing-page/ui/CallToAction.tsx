@@ -33,14 +33,14 @@ export function CallToAction() {
         <div className="relative isolate h-64 rounded-xl overflow-hidden sm:col-span-4 sm:h-80 md:h-96">
           <Image
             aria-hidden
-            alt="AI Data Network"
+            alt=""
             src="/images/wabrix_cta_landscape_20260503.png"
             fill
             sizes="(min-width: 640px) 66vw, 100vw"
             className="absolute inset-0 -z-10 rounded-2xl blur-xl object-cover"
           />
           <Image
-            alt="AI Data Network"
+            alt="Illustrative diagram of AI-assisted WhatsApp message routing, with sample data"
             src="/images/wabrix_cta_landscape_20260503.png"
             fill
             sizes="(min-width: 640px) 66vw, 100vw"

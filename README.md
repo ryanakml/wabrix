@@ -26,6 +26,8 @@ The sections below describe the implemented code. They are not customer case stu
 
 ![Wabrix banner](apps/web-2/public/banner.png)
 
+*Illustrative dashboard mockup with sample data. Wabrix has no external customers.*
+
 Wabrix is a WhatsApp-first AI customer communication platform that combines an automated, knowledge-grounded bot with a real-time operator inbox.
 
 Wabrix helps teams handle more WhatsApp conversations without losing quality.

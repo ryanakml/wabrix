@@ -103,7 +103,7 @@ export const Map = () => {
         <div className="relative aspect-video w-full max-w-4xl overflow-hidden rounded-2xl shadow-2xl ring-1 ring-white/10">
           <Image
             src="/images/wabrix_global_map.png"
-            alt="WhatsApp agent operations overview"
+            alt="Illustrative diagram of WhatsApp agent orchestration"
             fill
             className="object-cover opacity-90"
           />
