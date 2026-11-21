@@ -6,6 +6,7 @@
     "dev": "remotion preview src/index.ts",
     "render": "remotion render src/index.ts WabrixDemo16x9 out/wabrix-demo.mp4",
     "render:vertical": "remotion render src/index.ts WabrixDemoVertical out/wabrix-demo-vertical.mp4",
+    "upload": "wrangler r2 object put wabrix-assets/wabrix-demo.mp4 --file=out/wabrix-demo.mp4 --content-type=video/mp4 --remote",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

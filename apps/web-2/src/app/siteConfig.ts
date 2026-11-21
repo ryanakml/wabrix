@@ -5,7 +5,9 @@ export const siteConfig = {
     'Wabrix is a personal portfolio project and live demo of a WhatsApp-first AI customer communication platform.',
   ogImage: '/images/wabrix_cta_landscape.png',
   demoVideo: {
-    url: process.env.NEXT_PUBLIC_DEMO_VIDEO_URL || '/videos/wabrix-demo.mp4',
+    url:
+      process.env.NEXT_PUBLIC_DEMO_VIDEO_URL ||
+      'https://pub-69e96f6ae01945ec9e55ee688de1ef05.r2.dev/wabrix-demo.mp4',
     poster: '/images/wabrix_cta_landscape.png',
     duration: '0:45',
   },

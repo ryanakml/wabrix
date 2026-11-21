@@ -10,7 +10,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "video:dev": "pnpm --filter @wabrix/video dev",
-    "video:render": "pnpm --filter @wabrix/video render"
+    "video:render": "pnpm --filter @wabrix/video render",
+    "video:upload": "pnpm --filter @wabrix/video upload"
   },
   "devDependencies": {
     "prettier": "^3.7.4",
