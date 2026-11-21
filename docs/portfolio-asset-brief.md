@@ -1,0 +1,38 @@
+# Wabrix portfolio figure brief
+
+## Chosen story
+
+Wabrix lets a business configure a WhatsApp support bot with its own knowledge, preview a grounded answer, then operate live conversations in a shared inbox. The figure shows the **configure and verify** moment: one saved knowledge source beside the actual Bot Emulator's prompt, response, and matched-source state. This is a product workspace, not a backend architecture diagram or a simulated WhatsApp chat. The emulator is explicitly a preview; it does not send a live message.
+
+The main user job is to run reliable, knowledge-informed WhatsApp customer communication with human control when needed. A representative, narrow scenario is an operator saving a short support-hours policy and testing a customer's support-hours question before live use. The source and response below are fictional demo content, never evidence of a real customer, tenant, or generated runtime result.
+
+## Evidence and truth boundary
+
+- `README.md:19-33` defines WhatsApp-first customer communication, knowledge-grounded bot, and operator inbox. `docs/phase-0/prd.md` names the configuration, knowledge, WhatsApp, and handoff jobs.
+- `apps/web-2/src/app/(workspace)/knowledge-base/page.tsx:9-18` actually composes `KnowledgeBaseManager` and `BotStudioShell`; `apps/web-2/src/features/bot-studio/components/bot-studio-shell.tsx:4-10` places the Bot Emulator beside the knowledge UI on wide screens.
+- `apps/web-2/src/features/bot-studio/components/knowledge-base-manager.tsx:185-190,285-345` defines the source card's actual fields and preview: source type, status, chunk count, title, and Markdown content.
+- `apps/web-2/src/features/bot-studio/components/bot-emulator-panel.tsx:16-53,70-130` defines the prompt, Run, response, retrieval count, and source-title display; its own copy says that a preview sends no live messages.
+- `packages/backend/convex/ai.ts:270-321,393-401` retrieves relevant chunks and returns `ragChunkCount` and `knowledgeSourceTitles` with preview content. `apps/web/__tests__/bot-studio.test.tsx:12-18,142-152` exercises the preview UI with mocked knowledge metadata. The test is mocked UI evidence, not proof of an authenticated live result.
+- `packages/backend/convex/orchestratorAction.ts:127-204` and `packages/backend/__tests__/orchestrator.test.ts:566-622` support the separate live RAG draft path. `apps/web-2/src/config/nav-config.ts:49-85` grounds the Chat, Knowledge Base, and WhatsApp Integration navigation labels.
+- `apps/web-2/src/components/themes/theme.config.ts:1-6` selects a neutral Vercel default UI theme. `apps/web-2/src/components/landing-page/WabrixLogo.tsx:4-13` uses `apps/web-2/public/logo.png`, the exact purple Wabrix wordmark. `apps/web-2/public/banner.png` is a reference for brand recognition only; its unverified dashboard metrics, phone exchange, and product menu must not be copied.
+- The repository currently contains two Next.js frontends and a migration **plan** in `migration-phases/README.md`; the planned target stack is not a depicted product capability. No authenticated runtime screen or tenant data was verified for this brief.
+
+## Production method and composition
+
+Use an editable, standalone HTML/CSS composition and browser raster capture. Reconstruct only source-backed UI components, keeping the current default UI's neutral white/ink treatment and Geist typography. Composite the exact `apps/web-2/public/logo.png` pixels at a proportional size, trimming transparent padding only; do not redraw the wordmark or substitute `logo.svg` (a different mark). Use the host's `#f7f9fa` ground and `#ecf0f2` secondary surface outside the UI, `#1f3038` ink, `#42535c` muted text. Use a single solid Wabrix purple sampled and recorded from `logo.png` for a functional source-to-preview connector or selected-state cue. Never recolor UI controls teal. Preserve the logo's original gradient, but add no decorative gradient, glow, shadow, perspective, device mockup, or headline inside the image. Keep the host's Imbue headings and Albert Sans body text outside the image unchanged.
+
+**Master geometry:** render opaque sRGB at 2250 × 1000, ratio 2.25:1; keep all essential matter within x=225–2025 and y=120–880. Flat front-facing surface, square external edges. Outer ground fills canvas. A single dominant cropped workspace occupies approximately x=275–1975, y=145–855, with quiet margin. Put the exact logo at the workspace's upper left, then a small authentic navigation line (`Knowledge Base`, with `Chat` and `WhatsApp Integration` secondary). Below, place a selected Knowledge Base source on the left and the Bot Emulator on the right. The eye should read source → prompt → response → matched source. Do not draw a diagram of embeddings or infrastructure. The connector, if used, is thin and purely relational.
+
+**Demo state:** one `inline` knowledge source titled `Support hours`, status `ready`, with Markdown `Support is available Monday–Friday, 09:00–17:00 WIB.` Show its content in `Selected Preview`. In the Bot Emulator, `User Prompt` is `When can I reach support?`; `Response` is `Support is available Monday–Friday, 09:00–17:00 WIB.`; `Knowledge Retrieval` reads `1 chunk used` and shows `Support hours`. Keep `Run` visible. These values represent a hand-composed, plausible demo state, not a captured AI output. Avoid model names, customer identities, orders, analytics, claimed time savings, delivery badges, and live-send indicators.
+
+**Density and crops:** omit form controls and long navigation that do not explain the source-to-preview relationship. At 1440px viewport, the selected source, question, response, and matched-source label must be legible. At 768px, use a simplified composition of the same two components with larger text. At 390px and approximately 350px displayed width, art-direct a separate 2250 × 1000 crop: exact Wabrix mark with a small `WhatsApp` channel label; two enlarged cards reading `Knowledge Base / Support hours` and `Bot Emulator / 09:00–17:00 WIB`; a relational connector labelled `source used`. Essential text should render at 16px or larger after scaling (at 350px, at least 103px in the master). Keep the same external slot ratio, with no website redesign. A 3:2 thumbnail in a contain box only needs the logo and source-to-preview silhouette to remain recognizable.
+
+## Deliverables and acceptance
+
+The later, separately authorized production batch may contain **at most two meaningful candidate compositions**. For each chosen candidate deliver the editable HTML/CSS and any compositing script; an opaque sRGB 2250 × 1000 PNG master; art-directed tablet/mobile PNGs if needed; and optimized WebP plus AVIF exports with the same ratio. Keep an asset manifest recording repo commit, exact logo path, demo-data authorship, used fonts, and conversion settings. Carry forward `apps/web-2/THIRD_PARTY_NOTICES.md` if any third-party UI code/assets are copied; prefer reconstructing simple geometry without copying vendor assets. Do not imply a runtime capture.
+
+Review the final files in the actual Home and Work figure at viewport widths 1440, 768, and 390, plus a roughly 350px image display; inspect the 3:2 contain thumbnail. Check crop safety, wordmark sharpness, source-to-result reading order, minimum essential text size, and that the output still resembles Wabrix rather than a generic AI tool.
+
+**Alt text:** `Wabrix Knowledge Base source beside a bot preview showing a response drawn from that source.`
+
+**External caption:** `Wabrix Knowledge Base and Bot Emulator — interface reconstruction with fictional demo knowledge; preview only, no WhatsApp message sent.`
