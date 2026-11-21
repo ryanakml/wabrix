@@ -14,8 +14,8 @@ export function NavBar() {
   const [open, setOpen] = React.useState(false)
   const scrolled = useScroll(15)
   const navLinks = [
-    { label: "Features", href: "#solutions" },
-    { label: "Solutions", href: "#agent-orchestration" },
+    { label: "Features", href: "/#solutions" },
+    { label: "Solutions", href: "/#agent-orchestration" },
     {
       label: "Docs",
       href: siteConfig.baseLinks.docs,
@@ -70,7 +70,7 @@ export function NavBar() {
               href="/auth/sign-in"
               onClick={() => captureAnalyticsEvent("cta_get_started_clicked")}
             >
-              Get started
+              Open demo
             </Link>
           </Button>
           <Button
@@ -115,7 +115,7 @@ export function NavBar() {
                 captureAnalyticsEvent("cta_get_started_clicked")
               }}
             >
-              Get started
+              Open demo
             </Link>
           </Button>
 

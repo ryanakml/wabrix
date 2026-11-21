@@ -1,56 +1,44 @@
-import {
-  RiGithubFill,
-  RiSlackFill,
-  RiTwitterXFill,
-  RiYoutubeFill,
-} from "@remixicon/react"
+import { RiGithubFill } from "@remixicon/react"
 import Link from "next/link"
+import { siteConfig } from "@/app/siteConfig"
 import { WabrixLogo } from "../WabrixLogo"
-const CURRENT_YEAR = new Date().getFullYear()
 
 const Footer = () => {
-  const sections = {
-    solutions: {
-      title: "Solutions",
+  const sections = [
+    {
+      title: "Product",
       items: [
-        { label: "AI Customer Support", href: "#" },
-        { label: "AI Sales Agent", href: "#" },
-        { label: "Multilingual Bot", href: "#" },
-        { label: "Knowledge Base", href: "#" },
-        { label: "Custom Integrations", href: "#" },
-        { label: "API Access", href: "#" },
+        { label: "Features", href: "/#solutions", external: false },
+        { label: "Docs", href: siteConfig.baseLinks.docs, external: false },
+        { label: "Setup", href: siteConfig.baseLinks.setup, external: false },
+        { label: "Pricing", href: siteConfig.baseLinks.pricing, external: false },
+        { label: "Security", href: siteConfig.baseLinks.security, external: false },
       ],
     },
-    company: {
-      title: "Company",
+    {
+      title: "Project",
       items: [
-        { label: "About us", href: "#" },
-        { label: "Blog", href: "#" },
-        { label: "Careers", href: "#" },
-        { label: "Brand Kit", href: "#" },
+        { label: "About", href: siteConfig.baseLinks.about, external: false },
+        {
+          label: "Source code",
+          href: siteConfig.repositories.current,
+          external: true,
+        },
+        {
+          label: "wabrix-ai (Express + PostgreSQL)",
+          href: siteConfig.repositories.rearchitecture,
+          external: true,
+        },
       ],
     },
-    resources: {
-      title: "Resources",
+    {
+      title: "Legal",
       items: [
-        { label: "Documentation", href: "#" },
-        { label: "Community", href: "#", external: true },
-        { label: "Help Center", href: "#" },
-        { label: "Contact", href: "#" },
-        { label: "Privacy Policy", href: "#" },
-        { label: "Terms of Service", href: "#" },
+        { label: "Privacy Policy", href: siteConfig.baseLinks.privacy, external: false },
+        { label: "Terms of Service", href: siteConfig.baseLinks.terms, external: false },
       ],
     },
-    partners: {
-      title: "Partners",
-      items: [
-        { label: "Reseller Program", href: "#", external: true },
-        { label: "System Status", href: "#", external: true },
-        { label: "Affiliate", href: "#", external: true },
-        { label: "Developer Guide", href: "#" },
-      ],
-    },
-  }
+  ]
 
   return (
     <div className="px-4 xl:px-0">
@@ -102,10 +90,7 @@ const Footer = () => {
         </div>
         <svg
           className="mb-10 h-20 w-full border-y border-dashed border-gray-300 stroke-gray-300"
-          // style={{
-          //   maskImage:
-          //     "linear-gradient(transparent, white 10rem, white calc(100% - 10rem), transparent)",
-          // }}
+          aria-hidden="true"
         >
           <defs>
             <pattern
@@ -146,61 +131,48 @@ const Footer = () => {
 
           <div>
             <div className="mt-4 flex items-center">
-              {/* Social Icons */}
-              <Link
-                href="#"
+              <a
+                href={siteConfig.repositories.current}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-sm p-2 text-gray-700 transition-colors duration-200 hover:bg-gray-200 hover:text-gray-900"
-              >
-                <RiTwitterXFill className="size-5" />
-              </Link>
-              <Link
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-sm p-2 text-gray-700 transition-colors duration-200 hover:bg-gray-200 hover:text-gray-900"
-              >
-                <RiYoutubeFill className="size-5" />
-              </Link>
-              <Link
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
+                aria-label="Wabrix source code on GitHub"
                 className="rounded-sm p-2 text-gray-700 transition-colors duration-200 hover:bg-gray-200 hover:text-gray-900"
               >
                 <RiGithubFill className="size-5" />
-              </Link>
-              <Link
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-sm p-2 text-gray-700 transition-colors duration-200 hover:bg-gray-200 hover:text-gray-900"
-              >
-                <RiSlackFill className="size-5" />
-              </Link>
+              </a>
             </div>
-            <div className="ml-2 hidden text-sm text-gray-700 lg:inline">
-              &copy; {CURRENT_YEAR} Wabrix AI, Inc.
+            <div className="mt-4 ml-2 text-sm text-gray-700">
+              &copy; 2026 Wabrix.
             </div>
           </div>
         </div>
 
         {/* Footer Sections */}
-        {Object.entries(sections).map(([key, section]) => (
-          <div key={key} className="mt-10 min-w-44 pl-2 lg:mt-0 lg:pl-0">
+        {sections.map((section) => (
+          <div key={section.title} className="mt-10 min-w-44 pl-2 lg:mt-0 lg:pl-0">
             <h3 className="mb-4 font-medium text-gray-900 sm:text-sm">
               {section.title}
             </h3>
             <ul className="space-y-4">
               {section.items.map((item) => (
                 <li key={item.label} className="text-sm">
-                  <Link
-                    href={item.href}
-                    className="text-gray-600 transition-colors duration-200 hover:text-gray-900"
-                  >
-                    {item.label}
-                  </Link>
+                  {item.external ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 transition-colors duration-200 hover:text-gray-900"
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="text-gray-600 transition-colors duration-200 hover:text-gray-900"
+                    >
+                      {item.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

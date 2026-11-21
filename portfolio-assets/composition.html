@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wabrix portfolio figure</title>
+    <style>
+      @font-face { font-family: Geist; src: url('./fonts/geist-400.ttf'); font-weight: 400; }
+      @font-face { font-family: Geist; src: url('./fonts/geist-500.ttf'); font-weight: 500; }
+      @font-face { font-family: Geist; src: url('./fonts/geist-600.ttf'); font-weight: 600; }
+      @font-face { font-family: Geist; src: url('./fonts/geist-700.ttf'); font-weight: 700; }
+      @font-face { font-family: Albert; src: url('./fonts/albert-sans-500.ttf'); font-weight: 500; }
+      @font-face { font-family: Albert; src: url('./fonts/albert-sans-600.ttf'); font-weight: 600; }
+      :root {
+        --ground: #f7f9fa;
+        --surface: #ecf0f2;
+        --ink: #1f3038;
+        --muted: #42535c;
+        --line: #dce4e8;
+        --purple: #7d40fa;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; width: 2250px; height: 1000px; overflow: hidden; }
+      body { background: var(--ground); color: var(--ink); font-family: Geist, Arial, sans-serif; }
+      .artboard { position: relative; width: 2250px; height: 1000px; overflow: hidden; background: var(--ground); }
+      .scene { display: none; }
+      body[data-variant="desktop"] .desktop,
+      body[data-variant="tablet"] .tablet,
+      body[data-variant="mobile"] .mobile { display: block; }
+      .frame { position: absolute; background: #fff; border: 2px solid var(--line); overflow: hidden; }
+      .brand { display: block; width: 370px; height: auto; }
+      .rule { height: 2px; background: var(--line); }
+      .nav { display: flex; align-items: center; gap: 46px; color: var(--muted); font-size: 25px; font-weight: 500; }
+      .nav .active { color: var(--ink); font-weight: 600; border-bottom: 4px solid var(--ink); padding: 18px 0 14px; }
+      .small-label { color: var(--muted); font-size: 25px; font-weight: 600; letter-spacing: .015em; }
+      .ui-title { margin: 0; color: var(--ink); font-size: 52px; font-weight: 600; line-height: 1.08; letter-spacing: -.04em; }
+      .ui-desc { margin: 14px 0 0; color: var(--muted); font-size: 25px; font-weight: 400; line-height: 1.3; }
+      .tag { display: inline-flex; align-items: center; min-height: 38px; border: 2px solid var(--line); border-radius: 9px; padding: 4px 16px; font-size: 23px; font-weight: 500; line-height: 1; white-space: nowrap; }
+      .tag.soft { background: var(--surface); border-color: var(--surface); }
+      .tag.purple { border-color: #ded1ff; background: #f3edff; color: #5022a8; }
+      .display-card { border: 2px solid var(--line); border-radius: 12px; background: white; }
+      .response-card { background: var(--surface); border: 2px solid #d8e0e4; border-radius: 10px; }
+
+      /* Source-backed desktop reconstruction: Knowledge Base page + Bot Emulator. */
+      .desktop .frame { left: 260px; top: 145px; width: 1730px; height: 710px; }
+      .desktop .frame-header { position: absolute; top: 0; left: 0; width: 100%; height: 136px; padding: 27px 68px; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid var(--line); }
+      .desktop .content { position: absolute; inset: 166px 68px 40px; display: grid; grid-template-columns: 738px 756px; gap: 98px; }
+      .desktop .source, .desktop .emulator { position: relative; min-width: 0; }
+      .desktop .source-label { position: absolute; top: 132px; left: 0; }
+      .desktop .source-card { position: absolute; top: 168px; left: 0; width: 738px; height: 170px; border-left: 7px solid var(--purple); padding: 23px 30px 22px; }
+      .desktop .source-card .tag-row { display: flex; gap: 10px; }
+      .desktop .source-name { margin-top: 18px; font-size: 39px; font-weight: 600; letter-spacing: -.03em; line-height: 1.05; }
+      .desktop .source-excerpt { margin-top: 10px; font-size: 25px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .desktop .preview-label { position: absolute; top: 364px; left: 0; }
+      .desktop .preview-card { position: absolute; top: 401px; left: 0; width: 738px; height: 103px; padding: 26px 27px; font-size: 26px; line-height: 1.35; }
+      .desktop .emulator .ui-desc { max-width: 690px; }
+      .desktop .prompt-label { position: absolute; top: 132px; left: 0; }
+      .desktop .prompt-card { position: absolute; top: 168px; left: 0; width: 756px; height: 69px; padding: 17px 24px; font-size: 30px; }
+      .desktop .run { position: absolute; top: 252px; left: 0; border: 0; border-radius: 9px; padding: 12px 37px; background: #12191d; color: #fff; font: 600 25px Geist, sans-serif; }
+      .desktop .emulator .rule { position: absolute; top: 313px; left: 0; width: 756px; }
+      .desktop .response-label { position: absolute; top: 328px; left: 0; }
+      .desktop .emulator .response-card { position: absolute; top: 365px; left: 0; width: 756px; height: 80px; padding: 18px 22px; font-size: 27px; line-height: 1.35; }
+      .desktop .retrieval { position: absolute; top: 452px; left: 0; width: 756px; display: flex; align-items: center; justify-content: space-between; }
+      .desktop .source-used { position: absolute; top: 492px; left: 0; }
+
+      /* Simplified tablet crop, retaining the same two real workspace components. */
+      .tablet .frame { left: 250px; top: 145px; width: 1750px; height: 710px; }
+      .tablet .frame-header { position: absolute; inset: 0 0 auto; height: 130px; display: flex; align-items: center; padding: 25px 70px; border-bottom: 2px solid var(--line); }
+      .tablet .frame-header .brand { width: 380px; }
+      .tablet .frame-header .channel { margin-left: auto; font-size: 47px; font-weight: 500; color: var(--muted); }
+      .tablet .columns { position: absolute; top: 165px; left: 70px; right: 70px; bottom: 45px; display: grid; grid-template-columns: 760px 780px; gap: 70px; }
+      .tablet .ui-title { font-size: 63px; }
+      .tablet .source-card { margin-top: 34px; width: 100%; height: 370px; border-left: 8px solid var(--purple); padding: 29px 31px; }
+      .tablet .source-card .tag { font-size: 30px; height: 44px; }
+      .tablet .source-name { margin-top: 32px; font-size: 54px; font-weight: 600; letter-spacing: -.03em; }
+      .tablet .policy-label { margin-top: 12px; font-size: 42px; }
+      .tablet .policy-copy { margin-top: 12px; font-size: 48px; line-height: 1.13; }
+      .tablet .prompt-label { margin-top: 20px; font-size: 42px; }
+      .tablet .prompt-card { margin-top: 8px; height: 81px; padding: 13px 25px; font-size: 48px; }
+      .tablet .response-label { margin-top: 16px; font-size: 42px; }
+      .tablet .emulator .response-card { margin-top: 8px; height: 113px; padding: 16px 25px; font-size: 47px; line-height: 1.14; }
+      .tablet .match { display: flex; align-items: center; gap: 18px; margin-top: 12px; }
+      .tablet .match .small-label { font-size: 37px; }
+      .tablet .match .tag { font-size: 31px; }
+
+      /* Art-directed 350px display crop. All essential type is >=103px. */
+      .mobile .frame { left: 225px; top: 130px; width: 1800px; height: 740px; }
+      .mobile .brand { position: absolute; left: 62px; top: 54px; width: 410px; }
+      .mobile .channel { position: absolute; right: 65px; top: 62px; font-size: 106px; line-height: 1; font-weight: 500; color: var(--muted); }
+      .mobile .top-rule { position: absolute; top: 205px; left: 60px; right: 60px; height: 2px; background: var(--line); }
+      .mobile .relation-label { position: absolute; left: 551px; top: 223px; width: 700px; text-align: center; white-space: nowrap; color: var(--muted); font-family: Albert, Arial, sans-serif; font-size: 104px; font-weight: 500; line-height: 1; letter-spacing: -.035em; }
+      .mobile .mini-card { position: absolute; top: 335px; height: 395px; border: 2px solid var(--line); border-radius: 10px; background: #fff; padding: 34px 42px; }
+      .mobile .mini-card.source { left: 55px; width: 755px; border-left: 11px solid var(--purple); }
+      .mobile .mini-card.emulator { right: 55px; width: 805px; }
+      .mobile .card-heading { font-size: 107px; font-weight: 600; line-height: .98; letter-spacing: -.045em; }
+      .mobile .card-body { margin-top: 27px; font-size: 106px; font-weight: 500; line-height: .98; letter-spacing: -.05em; }
+      .mobile .source .card-body { margin-top: 33px; }
+      .mobile .emulator .card-heading { font-size: 105px; }
+      .mobile .emulator .card-body { font-size: 105px; }
+      .mobile .bridge { position: absolute; left: 830px; top: 521px; width: 110px; height: 4px; background: var(--purple); }
+      .mobile .bridge::after { content: ''; position: absolute; right: 0; top: -12px; border-top: 14px solid transparent; border-bottom: 14px solid transparent; border-left: 22px solid var(--purple); }
+    </style>
+  </head>
+  <body>
+    <main class="artboard" role="img" aria-label="Wabrix Knowledge Base and Bot Emulator interface reconstruction with demo support-hours knowledge">
+      <div class="scene desktop">
+        <div class="frame">
+          <header class="frame-header">
+            <img class="brand" src="./source/wabrix-logo-trimmed.png" alt="Wabrix" />
+            <nav class="nav"><span>Chat</span><span class="active">Knowledge Base</span><span>WhatsApp Integration</span></nav>
+          </header>
+          <div class="content">
+            <section class="source">
+              <h1 class="ui-title">Knowledge Base</h1>
+              <p class="ui-desc">Manage the documents and data the bot uses.</p>
+              <div class="small-label source-label">Source List</div>
+              <div class="display-card source-card">
+                <div class="tag-row"><span class="tag">inline</span><span class="tag soft">ready</span><span class="tag">1 chunk</span></div>
+                <div class="source-name">Support hours</div>
+                <div class="source-excerpt">Support is available Monday–Friday, 09:00–17:00 WIB.</div>
+              </div>
+              <div class="small-label preview-label">Selected Preview</div>
+              <div class="response-card preview-card">Support is available Monday–Friday, 09:00–17:00 WIB.</div>
+            </section>
+            <section class="emulator">
+              <h2 class="ui-title">Bot Emulator</h2>
+              <p class="ui-desc">Preview answers without sending live messages.</p>
+              <div class="small-label prompt-label">User Prompt</div>
+              <div class="display-card prompt-card">When can I reach support?</div>
+              <button class="run" type="button">Run</button>
+              <div class="rule"></div>
+              <div class="small-label response-label">Response</div>
+              <div class="response-card">Support is available Monday–Friday, 09:00–17:00 WIB.</div>
+              <div class="retrieval"><span class="small-label">Knowledge Retrieval</span><span class="tag purple">1 chunk used</span></div>
+              <span class="tag source-used">Support hours</span>
+            </section>
+          </div>
+        </div>
+      </div>
+      <div class="scene tablet">
+        <div class="frame">
+          <header class="frame-header"><img class="brand" src="./source/wabrix-logo-trimmed.png" alt="Wabrix" /><span class="channel">WhatsApp Integration</span></header>
+          <div class="columns">
+            <section class="source">
+              <h1 class="ui-title">Knowledge Base</h1>
+              <div class="display-card source-card"><span class="tag">inline</span> <span class="tag soft">ready</span><div class="source-name">Support hours</div><div class="small-label policy-label">Selected Preview</div><div class="policy-copy">Monday–Friday,<br />09:00–17:00 WIB.</div></div>
+            </section>
+            <section class="emulator">
+              <h2 class="ui-title">Bot Emulator</h2>
+              <div class="small-label prompt-label">User Prompt</div>
+              <div class="display-card prompt-card">When can I reach support?</div>
+              <div class="small-label response-label">Response</div>
+              <div class="response-card">Monday–Friday,<br />09:00–17:00 WIB.</div>
+              <div class="match"><span class="small-label">Source used</span><span class="tag purple">Support hours</span></div>
+            </section>
+          </div>
+        </div>
+      </div>
+      <div class="scene mobile">
+        <div class="frame">
+          <img class="brand" src="./source/wabrix-logo-trimmed.png" alt="Wabrix" />
+          <span class="channel">WhatsApp</span>
+          <div class="top-rule"></div>
+          <div class="relation-label">source used</div>
+          <div class="mini-card source"><div class="card-heading">Knowledge<br />Base</div><div class="card-body">Support hours</div></div>
+          <div class="bridge" aria-hidden="true"></div>
+          <div class="mini-card emulator"><div class="card-heading">Bot Emulator</div><div class="card-body">09:00–17:00<br />WIB</div></div>
+        </div>
+      </div>
+    </main>
+    <script>
+      const variant = new URLSearchParams(location.search).get('variant') || 'desktop';
+      document.body.dataset.variant = ['desktop', 'tablet', 'mobile'].includes(variant) ? variant : 'desktop';
+    </script>
+  </body>
+</html>

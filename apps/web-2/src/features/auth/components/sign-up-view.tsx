@@ -43,13 +43,13 @@ export default function SignUpViewPage() {
           )}
         />
         <div className='text-sidebar-foreground relative z-20 mt-auto'>
-          <blockquote className='space-y-2'>
+          <div className='space-y-2'>
             <p className='text-lg'>
-              &ldquo;Launch a workspace built for WhatsApp automation, approved templates, and
-              human handoff when the bot needs backup.&rdquo;
+              A shared WhatsApp inbox with AI-assisted replies, approved templates, and human
+              handoff when the bot needs backup.
             </p>
-            <footer className='text-sidebar-foreground/70 text-sm'>Wabrix platform</footer>
-          </blockquote>
+            <p className='text-sidebar-foreground/70 text-sm'>Wabrix portfolio demo</p>
+          </div>
         </div>
       </div>
       <div className='flex min-h-screen items-center justify-center p-4 lg:p-8'>

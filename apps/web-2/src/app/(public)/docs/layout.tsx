@@ -13,7 +13,9 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
               <DocsSidebarNav />
             </div>
           </aside>
-          <div>{children}</div>
+          <div>
+            {children}
+          </div>
         </div>
       </div>
     </div>

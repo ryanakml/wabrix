@@ -21,15 +21,16 @@ export default function DocsIndexPage() {
         </p>
         <h1 className='text-4xl font-semibold tracking-tight text-gray-900'>Start fast, operate clearly.</h1>
         <p className='max-w-3xl text-lg leading-8 text-gray-600'>
-          These guides focus on the parts that matter in production: workspace setup, WABA health,
-          service-window rules, templates, and operational handoff.
+          These guides describe the setup and WhatsApp operations covered by this portfolio
+          project: workspace setup, WABA health, service-window rules, templates, and operational
+          handoff.
         </p>
       </header>
 
       <section className='space-y-4'>
         <div className='space-y-2'>
           <h2 className='text-2xl font-semibold text-gray-900'>Getting started</h2>
-          <p className='text-gray-600'>Use this first if your team is preparing the workspace.</p>
+          <p className='text-gray-600'>Start here to prepare a demo workspace.</p>
         </div>
         <div className='grid gap-4 md:grid-cols-2'>
           {gettingStarted.map((page) => (

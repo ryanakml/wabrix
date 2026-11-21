@@ -1,0 +1,92 @@
+{
+  "story": "Knowledge Base source to Bot Emulator preview; fictional demo knowledge",
+  "caption": "Wabrix Knowledge Base and Bot Emulator \u2014 interface reconstruction with fictional demo knowledge; preview only, no WhatsApp message sent.",
+  "alt": "Wabrix Knowledge Base source beside a bot preview showing a response drawn from that source.",
+  "repo_revision": "101002833ac75e262a8829c0e881ccce4e79771d",
+  "original_logo": "apps/web-2/public/logo.png",
+  "original_logo_sha256": "e011d32313dde4a10307da280d1fb601857d31cfb264d847a1fb27111560e30b",
+  "trimmed_logo": "portfolio-assets/source/wabrix-logo-trimmed.png",
+  "trimmed_logo_sha256": "636ce8d4dcafd8a7856ca4ff6ac80493b4ecfc16a9c6598f058f85f3156d60a0",
+  "logo_trim_bbox": [
+    342,
+    247,
+    1632,
+    555
+  ],
+  "fonts": {
+    "Geist": {
+      "source_css": "https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap",
+      "license": "fonts/geist-OFL.txt",
+      "files_sha256": {
+        "400": "ccce59465ae5c61930ada5453834f60500fbd95084d85db63e0e65fad0125455",
+        "500": "a8eefb873ba9c9020665f8a98302697ce1f3b79ab2deef6ee508c0ca6a82e876",
+        "600": "7171f481b121803d007f5c6c76cd9988c0d41cce4202db9a18dff9945505d36d",
+        "700": "1a9874b3be0fc168692a3d2327bccb4d28835653d3b91537a755296a467a83e3"
+      }
+    },
+    "Albert Sans": {
+      "source_css": "https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&display=swap",
+      "license": "fonts/albert-sans-OFL.txt",
+      "files_sha256": {
+        "400": "238931f0a6937052581190e4e051a6da837e99d30d42d69a7e6a105ec4da2e49",
+        "500": "7fdb3a23a4c49a365f42b00d3be90389e0ad6a3e9b2e9055687859d6cafa8623",
+        "600": "0b2f3cce0c8d1f2b06ca8066bd669ba39f7aacf64ba8277d82efa366c53c7d91",
+        "700": "b7c2cbd579be9ae7b93877f9f5116b64ecc056789ff9532825e51fb14b743776"
+      }
+    }
+  },
+  "purple": "#7d40fa, sampled from original logo pixel (650, 350)",
+  "variants": {
+    "desktop": {
+      "png": {
+        "path": "wabrix-desktop.png",
+        "bytes": 148332,
+        "sha256": "807657c14411535af93aabcca64394b7547be7f48fdba481f3a55cb58e2f4743"
+      },
+      "webp": {
+        "path": "wabrix-desktop.webp",
+        "bytes": 69734,
+        "sha256": "88ea2334d1ebc6095e80dbe2ec04bcec5e9ccd15fa1a1c3425f6dd70cfac5a2d"
+      },
+      "avif": {
+        "path": "wabrix-desktop.avif",
+        "bytes": 44548,
+        "sha256": "4e968af947cf6f85e5ce45f0ea0819451e46067a5c238602ffac78d429add460"
+      }
+    },
+    "tablet": {
+      "png": {
+        "path": "wabrix-tablet.png",
+        "bytes": 127208,
+        "sha256": "9104d92ad5da3a68436d329e605895e50db808ee6757d88ac335a3a98f764da2"
+      },
+      "webp": {
+        "path": "wabrix-tablet.webp",
+        "bytes": 62692,
+        "sha256": "8e4bd0a33196138b17d3e85730bc0284a6597792e3778a6613f9bfde0e9a808a"
+      },
+      "avif": {
+        "path": "wabrix-tablet.avif",
+        "bytes": 37622,
+        "sha256": "a846f046a1922d503ce22f49368b9b00fe3f74b6146ac908c387403b705f5469"
+      }
+    },
+    "mobile": {
+      "png": {
+        "path": "wabrix-mobile.png",
+        "bytes": 115666,
+        "sha256": "e5c649ca58119d46cbb75a79d3bb342385646b20c9bf2a08292bf91991aaf3b8"
+      },
+      "webp": {
+        "path": "wabrix-mobile.webp",
+        "bytes": 50234,
+        "sha256": "a1d92b6a686e363d611a74f95472ee59753babc36694036b992cf2608732f8c4"
+      },
+      "avif": {
+        "path": "wabrix-mobile.avif",
+        "bytes": 29620,
+        "sha256": "a2cc3aeb530da13a957aba0843952e7688ded8465c968e12aa72c01e22dbb6e7"
+      }
+    }
+  }
+}

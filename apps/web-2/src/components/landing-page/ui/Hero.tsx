@@ -1,59 +1,83 @@
-import { RiArrowRightUpLine } from "@remixicon/react";
-import { FadeContainer, FadeDiv, FadeSpan } from "../Fade";
-import GameOfLife from "./HeroBackground";
+import { RiArrowRightUpLine, RiGithubFill } from "@remixicon/react"
+import Link from "next/link"
+import { siteConfig } from "@/app/siteConfig"
+import { FadeContainer, FadeDiv } from "../Fade"
+import GameOfLife from "./HeroBackground"
+import { HeroInboxShowcase } from "./HeroInboxShowcase"
+import { DemoVideoDialog } from "./DemoVideoDialog"
 
 export function Hero() {
   return (
-    <section aria-label="hero">
-      <FadeContainer className="relative flex flex-col items-center justify-center pb-10 sm:pb-12">
+    <section aria-label="hero" className="relative pt-32 pb-16 sm:pt-40 sm:pb-20">
+      <FadeContainer className="relative flex flex-col items-center justify-center">
+        {/* Model Badge */}
         <FadeDiv className="mx-auto">
-          <a
-            aria-label="View latest update the changelog page"
-            href="/auth/sign-in"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mx-auto w-full"
+          <Link
+            aria-label="Read the Wabrix documentation"
+            href={siteConfig.baseLinks.docs}
+            className="mx-auto"
           >
-            <div className="inline-flex max-full items-center gap-3 rounded-full bg-white/5 px-2.5 py-0.5 pr-3 pl-0.5 font-medium text-gray-900 ring-1 shadow-lg shadow-violet-400/20 ring-black/10 filter backdrop-blur-[1px] transition-colors hover:bg-violet-500/2.5 focus:outline-hidden sm:text-sm">
-              <span className="shrink-0 truncate rounded-full border bg-gray-50 px-2.5 py-1 text-sm text-gray-600 sm:text-xs">
-                New
+            <div className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white/80 px-3 py-1 text-xs font-medium text-gray-800 shadow-xs backdrop-blur-xs transition-colors hover:border-violet-300 hover:bg-violet-50/50">
+              <span className="rounded-full bg-violet-100 px-2 py-0.5 text-[11px] font-semibold text-violet-700">
+                AI Model
               </span>
-              <span className="flex items-center gap-1 truncate">
-                <span className="w-full truncate">
-                  Gemini 2.0 Flash Integration
-                </span>
-
-                <RiArrowRightUpLine className="size-4 shrink-0 text-gray-700" />
+              <span className="flex items-center gap-1 text-gray-700">
+                Gemini 2.5 Flash integration
+                <RiArrowRightUpLine className="size-3.5 text-gray-400" />
               </span>
             </div>
-          </a>
-        </FadeDiv>
-        <h1 className="mt-8 text-center text-5xl font-semibold tracking-tighter text-gray-900 sm:text-8xl sm:leading-22">
-          <FadeSpan>Scale</FadeSpan> <FadeSpan>your</FadeSpan>
-          <br />
-          <FadeSpan>WhatsApp</FadeSpan> <FadeSpan>with</FadeSpan>{" "}
-          <FadeSpan>AI</FadeSpan>
-        </h1>
-        <p className="mt-5 max-w-xl text-center text-base text-balance text-gray-700 sm:mt-8 sm:text-xl">
-          <FadeSpan>Empower your business with intelligent bots,</FadeSpan>{" "}
-          <FadeSpan>
-            real-time analytics, and seamless human-in-the-loop
-          </FadeSpan>{" "}
-          <FadeSpan>collaboration for every customer interaction.</FadeSpan>
-        </p>
-        <FadeDiv>
-          <a
-            className="mt-6 inline-flex cursor-pointer flex-row items-center justify-center gap-1 rounded-md border-b-[1.5px] border-violet-700 bg-linear-to-b from-violet-400 to-violet-500 px-5 py-3 leading-4 font-medium tracking-wide whitespace-nowrap text-white shadow-[0_0_0_2px_rgba(0,0,0,0.04),0_0_14px_0_rgba(255,255,255,0.19)] transition-all duration-200 ease-in-out hover:shadow-violet-300"
-            href="/auth/sign-in"
-          >
-            Build your bot now
-          </a>
+          </Link>
         </FadeDiv>
 
-        <div className="absolute inset-0 -z-10 flex items-center justify-center">
+        {/* Honest, Clear Title without cliches */}
+        <h1 className="mt-6 max-w-4xl text-center text-4xl font-semibold tracking-tight text-gray-900 sm:text-6xl sm:leading-tight lg:text-7xl">
+          WhatsApp shared inbox with AI-assisted replies
+        </h1>
+
+        {/* Clear, Specific Subtitle */}
+        <p className="mt-5 max-w-2xl text-center text-base text-balance text-gray-600 sm:text-lg sm:leading-relaxed">
+          Connect WhatsApp Cloud API, upload business documents, and let an AI
+          assistant draft grounded answers while operators keep full control with
+          one-click handoff.
+        </p>
+
+        {/* CTA Buttons */}
+        <FadeDiv className="mt-7 flex flex-wrap items-center justify-center gap-3">
+          <Link
+            className="inline-flex cursor-pointer items-center justify-center rounded-lg bg-violet-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-violet-700 focus:outline-hidden focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
+            href="/auth/sign-in"
+          >
+            Open the demo
+          </Link>
+          <DemoVideoDialog />
+          <a
+            className="inline-flex cursor-pointer items-center justify-center gap-1.5 rounded-lg border border-gray-300 bg-white px-5 py-2.5 text-sm font-medium text-gray-700 shadow-sm transition-colors hover:bg-gray-50 focus:outline-hidden focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+            href={siteConfig.repositories.current}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <RiGithubFill className="size-4" />
+            View on GitHub
+          </a>
+          <Link
+            className="inline-flex cursor-pointer items-center justify-center rounded-lg px-4 py-2.5 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
+            href={siteConfig.baseLinks.setup}
+          >
+            Read setup docs
+          </Link>
+        </FadeDiv>
+
+
+        {/* Real Product Showcase (WhatsApp Messenger) */}
+        <div className="mt-12 w-full px-4 sm:px-6">
+          <HeroInboxShowcase />
+        </div>
+
+        {/* Subtle Canvas Dot Pattern */}
+        <div className="absolute inset-0 -z-10 flex items-center justify-center opacity-30">
           <GameOfLife />
         </div>
       </FadeContainer>
     </section>
-  );
+  )
 }

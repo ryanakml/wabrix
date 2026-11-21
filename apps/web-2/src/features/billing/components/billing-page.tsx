@@ -274,11 +274,12 @@ export default function BillingPage() {
       pageDescription={`Manage your subscription and usage limits for ${organization?.name ?? "your workspace"}`}
     >
       <div className="space-y-6">
-        <Alert>
+        <Alert className="border-amber-300 bg-amber-50 text-amber-900">
           <Icons.info className="h-4 w-4" />
           <AlertDescription>
-            Review your current plan, monthly usage, recent billing activity,
-            and start checkout for a different plan.
+            <strong>Demo only — no billing.</strong> This hosted demo is not
+            intended for real payments. Plan prices and limits below are sample
+            values. Do not enter payment details.
           </AlertDescription>
         </Alert>
 
@@ -351,7 +352,7 @@ export default function BillingPage() {
                 </div>
                 <div className="space-y-1">
                   <p className="text-muted-foreground text-xs uppercase tracking-wider">
-                    Current price
+                    Sample price
                   </p>
                   <p className="font-semibold">
                     {billingState?.currentSubscription?.amount != null &&
@@ -492,8 +493,8 @@ export default function BillingPage() {
             <CardHeader>
               <CardTitle>Manage Plans</CardTitle>
               <CardDescription>
-                Pricing updates automatically based on the checkout provider for
-                the selected billing country.
+                Plan catalog shown for demonstration. Prices are sample values
+                and no payment is collected.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -534,7 +535,7 @@ export default function BillingPage() {
                             {formatPrice(presentation.currency, amount)}
                           </p>
                           <p className="text-muted-foreground text-xs">
-                            / month
+                            Sample price — no charge
                           </p>
                         </div>
                       </div>
@@ -560,7 +561,7 @@ export default function BillingPage() {
                           ? "Opening checkout..."
                           : isCurrentPlan
                             ? "Current Plan"
-                            : "Upgrade"}
+                            : "Demo checkout"}
                       </Button>
                     </div>
                   );
