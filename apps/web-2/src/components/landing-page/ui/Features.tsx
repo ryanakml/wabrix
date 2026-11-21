@@ -113,16 +113,16 @@ export default function Features() {
           <div className="lg:col-span-7">
             <div className="relative rounded-xl border border-gray-200 bg-white p-2 shadow-sm overflow-hidden">
               <Image
-                src="/images/wabrix-bot-studio-preview.webp"
-                alt="Wabrix Knowledge Base source beside a bot preview showing a response drawn from that source"
-                width={1125}
-                height={500}
+                src="/images/wabrix-knowledge-base-preview.webp"
+                alt="Wabrix Knowledge Base and Bot Emulator preview showing grounded answers with source citations"
+                width={1402}
+                height={1122}
                 className="w-full rounded-lg object-contain"
                 priority
               />
               <div className="mt-2 text-center text-[11px] text-gray-500">
-                Wabrix Knowledge Base and Bot Emulator — interface preview with
-                fictional demo knowledge; preview only, no WhatsApp message sent.
+                Wabrix Knowledge Base &amp; Bot Emulator — grounded knowledge
+                retrieval with verified source citations.
               </div>
             </div>
           </div>
