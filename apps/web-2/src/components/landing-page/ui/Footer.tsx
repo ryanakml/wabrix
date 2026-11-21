@@ -141,22 +141,8 @@ const Footer = () => {
                 <RiGithubFill className="size-5" />
               </a>
             </div>
-            <div className="mt-4 ml-2 max-w-xs text-sm leading-6 text-gray-600">
-              <p>Portfolio project and live demo. Not a commercial product.</p>
-              <p className="mt-2">
-                Source:{" "}
-                <a
-                  href={siteConfig.repositories.current}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-medium text-gray-800 underline decoration-gray-300 underline-offset-4 transition-colors hover:text-gray-900"
-                >
-                  github.com/ryanakml/wabrix
-                </a>
-              </p>
-            </div>
             <div className="mt-4 ml-2 text-sm text-gray-700">
-              &copy; 2026 Wabrix. Personal portfolio project.
+              &copy; 2026 Wabrix.
             </div>
           </div>
         </div>

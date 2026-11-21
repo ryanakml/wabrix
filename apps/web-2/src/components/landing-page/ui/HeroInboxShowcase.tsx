@@ -78,7 +78,7 @@ const SAMPLE_CONVERSATIONS: ConversationItem[] = [
       },
       {
         sender: "operator",
-        text: "Hi Sarah, Ryan here from Support. I just checked with our warehouse team—your item cleared inspection, and your refund has been processed back to your card. You should receive confirmation shortly.",
+        text: "Hi Sarah, Support Team here. I just checked with our warehouse team—your item cleared inspection, and your refund has been processed back to your card. You should receive confirmation shortly.",
         time: "12:15 PM",
         note: "Operator manual takeover · Bot paused",
       },

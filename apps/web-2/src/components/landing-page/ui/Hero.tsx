@@ -7,7 +7,7 @@ import { HeroInboxShowcase } from "./HeroInboxShowcase"
 
 export function Hero() {
   return (
-    <section aria-label="hero" className="relative pt-6 pb-16 sm:pb-20">
+    <section aria-label="hero" className="relative pt-32 pb-16 sm:pt-40 sm:pb-20">
       <FadeContainer className="relative flex flex-col items-center justify-center">
         {/* Model Badge */}
         <FadeDiv className="mx-auto">
@@ -65,21 +65,6 @@ export function Hero() {
           </Link>
         </FadeDiv>
 
-        {/* Required Portfolio Disclosure */}
-        <FadeDiv className="mt-4">
-          <p className="max-w-xl text-center text-xs text-balance text-gray-500">
-            Portfolio project and live demo. Not a commercial product. Source:{" "}
-            <a
-              href={siteConfig.repositories.current}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-gray-700 underline decoration-gray-300 underline-offset-4 transition-colors hover:text-gray-900"
-            >
-              github.com/ryanakml/wabrix
-            </a>
-            .
-          </p>
-        </FadeDiv>
 
         {/* Real Product Showcase (WhatsApp Messenger) */}
         <div className="mt-12 w-full px-4 sm:px-6">

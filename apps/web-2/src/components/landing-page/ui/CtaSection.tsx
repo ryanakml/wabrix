@@ -134,9 +134,7 @@ export function CtaSection() {
               ))}
             </div>
 
-            <p className="mt-4 text-[11px] leading-relaxed text-zinc-400">
-              Portfolio project and live demo · Sample data · No payment collected.
-            </p>
+
           </div>
 
           <div className="lg:col-span-6">
