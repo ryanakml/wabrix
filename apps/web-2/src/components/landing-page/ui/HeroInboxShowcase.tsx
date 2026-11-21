@@ -35,73 +35,73 @@ type ConversationItem = {
 const SAMPLE_CONVERSATIONS: ConversationItem[] = [
   {
     id: "1",
-    name: "Budi Santoso",
-    phone: "+62 812-9921-8840",
-    lastMessage: "Jam operasional toko sampai jam berapa ya?",
-    time: "13:42",
+    name: "John Doe",
+    phone: "+1 (555) 234-5678",
+    lastMessage: "What are your customer support hours?",
+    time: "1:42 PM",
     status: "bot",
     channel: "Support",
     messages: [
       {
         sender: "customer",
-        text: "Halo min, mau tanya toko buka jam berapa ya? Dan kalau kirim ke Bandung bisa sampai besok?",
-        time: "13:40",
+        text: "Hi! What are your customer support hours? And do you offer expedited shipping for overseas orders?",
+        time: "1:40 PM",
       },
       {
         sender: "bot",
-        text: "Halo kak Budi! Toko kami buka setiap hari pukul 09:00 – 17:00 WIB. Untuk pengiriman ke Bandung tersedia opsi Next Day (estimasi sampai esok hari) jika pesanan diselesaikan sebelum pukul 14:00 WIB hari ini. Ada yang bisa kami bantu lagi kak?",
-        time: "13:41",
-        citations: ["support-hours.md", "delivery-faq.pdf"],
+        text: "Hello John! Our support team is available Monday through Friday, 9:00 AM – 5:00 PM EST. For overseas shipments, we offer International Priority (2–4 business days) if orders are placed before 2:00 PM EST today. How else can we help?",
+        time: "1:41 PM",
+        citations: ["support-hours.md", "shipping-policy.pdf"],
         note: "Grounded with Gemini 2.5 Flash via RAG chunks #12 & #4",
       },
     ],
   },
   {
     id: "2",
-    name: "Siti Rahmawati",
-    phone: "+62 857-1102-3912",
-    lastMessage: "Bisa minta tolong cek status retur #WB-102?",
-    time: "12:15",
+    name: "Sarah Jenkins",
+    phone: "+1 (555) 891-2345",
+    lastMessage: "Could you check the status of return #WB-102?",
+    time: "12:15 PM",
     status: "operator",
     channel: "Support",
     messages: [
       {
         sender: "customer",
-        text: "Siang kak, saya mau tanyakan paket retur #WB-102 apakah sudah diterima tim gudang?",
-        time: "12:10",
+        text: "Hi, could you help me check if return package #WB-102 has been received at your warehouse?",
+        time: "12:10 PM",
       },
       {
         sender: "bot",
-        text: "Paket retur dengan ID #WB-102 tercatat telah tiba di fasilitas logistik pada 21 Nov, 10:30 WIB. Tim QC kami membutuhkan waktu 1x24 jam kerja untuk pemeriksaan fisik barang.",
-        time: "12:11",
+        text: "Return package #WB-102 was logged at our fulfillment center on Nov 21 at 10:30 AM EST. Inspection is typically completed within 1 business day.",
+        time: "12:11 PM",
         citations: ["return-policy-2026.pdf"],
       },
       {
         sender: "operator",
-        text: "Halo kak Siti, saya Ryan dari CX. Saya baru saja koordinasi dengan tim gudang, paket kakak sudah selesai di-cek dan dana refund sedang diproses ke rekening ya kak. Estimasi 1-2 jam lagi.",
-        time: "12:15",
+        text: "Hi Sarah, Ryan here from Support. I just checked with our warehouse team—your item cleared inspection, and your refund has been processed back to your card. You should receive confirmation shortly.",
+        time: "12:15 PM",
         note: "Operator manual takeover · Bot paused",
       },
     ],
   },
   {
     id: "3",
-    name: "David Pratama",
-    phone: "+62 813-7729-1092",
-    lastMessage: "Apakah ada katalog untuk hampers lebaran?",
-    time: "Kemarin",
+    name: "Alex Chen",
+    phone: "+44 20 7946 0912",
+    lastMessage: "Do you have a catalog for corporate gift sets?",
+    time: "Yesterday",
     status: "resolved",
     channel: "Sales",
     messages: [
       {
         sender: "customer",
-        text: "Halo kak, apakah sudah ada katalog hampers untuk corporate gift?",
-        time: "Kemarin 16:20",
+        text: "Hello! Do you have a wholesale pricing catalog available for corporate gift sets?",
+        time: "Yesterday 4:20 PM",
       },
       {
         sender: "bot",
-        text: "Halo kak David! Kami memiliki katalog Corporate Hampers 2026 dengan minimum pemesanan 10 paket. File PDF katalog dan daftar harga telah kami siapkan di tautan berikut atau dapat kami kirimkan via dokumen WhatsApp.",
-        time: "Kemarin 16:21",
+        text: "Hello Alex! We have our Corporate Gift Catalog 2026 available with volume pricing for orders of 10 or more sets. You can download the specification sheet or we can share product availability directly in this WhatsApp thread.",
+        time: "Yesterday 4:21 PM",
         citations: ["corporate-catalog-2026.pdf"],
       },
     ],
@@ -138,7 +138,7 @@ export function HeroInboxShowcase() {
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-1.5 text-gray-600">
             <Smartphone className="size-3.5 text-emerald-600" />
-            <span className="font-mono text-[11px]">+62 812-8840-1920</span>
+            <span className="font-mono text-[11px]">+1 (555) 019-2834</span>
             <span className="inline-flex items-center gap-1 text-[11px] text-emerald-600">
               <span className="size-1.5 rounded-full bg-emerald-500" />
               Connected
@@ -229,7 +229,7 @@ export function HeroInboxShowcase() {
           </div>
         </div>
 
-        {/* Right: Active Chat Area (7 or 8 cols) */}
+        {/* Right: Active Chat Area (8 cols) */}
         <div className="md:col-span-7 lg:col-span-8 flex flex-col bg-white">
           {/* Chat Header */}
           <div className="flex items-center justify-between border-b border-gray-100 px-4 py-3">
@@ -315,7 +315,7 @@ export function HeroInboxShowcase() {
                           </span>
                         ))}
                         <span className="inline-flex items-center text-emerald-600 text-[10px] gap-0.5">
-                          <CheckCheck className="size-3" /> Sent to WhatsApp
+                          <CheckCheck className="size-3" /> Delivered
                         </span>
                       </div>
                     )}
@@ -335,7 +335,7 @@ export function HeroInboxShowcase() {
                     {msg.text}
                   </div>
                   <span className="mt-1 inline-flex items-center text-emerald-600 text-[10px] gap-0.5 mr-1">
-                    <CheckCheck className="size-3" /> Sent to WhatsApp
+                    <CheckCheck className="size-3" /> Delivered
                   </span>
                 </div>
               )

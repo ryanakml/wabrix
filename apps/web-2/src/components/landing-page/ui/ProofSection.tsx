@@ -136,29 +136,27 @@ export function ProofSection() {
           <div className="lg:col-span-7 rounded-xl border border-gray-200 bg-white p-4 space-y-3">
             <div className="text-[11px] text-gray-400 flex items-center justify-between">
               <span>Customer Message via WhatsApp</span>
-              <span>14:02 WIB</span>
+              <span>2:02 PM EST</span>
             </div>
             <div className="rounded-xl bg-gray-100 p-3 text-xs text-gray-800 max-w-[90%]">
-              Halo min, kalau mau retur produk pakaian karena salah ukuran
-              syaratnya apa saja ya?
+              Hi! What is your return policy if an item doesn&apos;t fit properly?
             </div>
 
             <div className="pt-2 border-t border-gray-100">
               <div className="flex items-center gap-1.5 text-[11px] text-violet-700 font-medium mb-1">
                 <Sparkles className="size-3" />
                 <span>AI Bot Response (Grounded)</span>
-                <span className="text-gray-400">· 14:02 WIB</span>
+                <span className="text-gray-400">· 2:02 PM EST</span>
               </div>
               <div className="rounded-xl bg-violet-600 p-3 text-xs text-white leading-relaxed">
-                Halo Kak! Untuk retur penukaran ukuran, syaratnya produk belum
-                dicuci, tag label masih utuh, dan pengajuan dilakukan maksimal 3
-                hari setelah barang diterima. Biaya ongkir penukaran ditanggung
-                pembeli kecuali jika terjadi kesalahan pengiriman dari pihak
-                kami.
+                Hello! Items in their original, unworn condition with tags
+                attached can be returned or exchanged within 14 days of delivery.
+                Return shipping is free for size exchanges, and refunds are
+                issued back to the original payment method upon warehouse inspection.
               </div>
               <div className="mt-2 flex items-center gap-2 text-[10px] text-gray-500">
                 <span className="font-mono text-violet-700 bg-violet-50 px-2 py-0.5 rounded border border-violet-200">
-                  📄 Source: return-policy-2026.pdf (Chunk #2)
+                  📄 Source: return-policy.pdf (Chunk #2)
                 </span>
                 <span className="flex items-center gap-0.5 text-emerald-600">
                   <CheckCheck className="size-3" /> Delivered
@@ -183,7 +181,7 @@ export function ProofSection() {
               <div className="rounded-lg bg-white p-2.5 border border-gray-200/70 flex items-center justify-between">
                 <span className="text-gray-600">Knowledge Matched</span>
                 <span className="font-mono text-violet-700 font-medium">
-                  return-policy-2026.pdf
+                  return-policy.pdf
                 </span>
               </div>
               <div className="rounded-lg bg-white p-2.5 border border-gray-200/70 flex items-center justify-between">
