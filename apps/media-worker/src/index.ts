@@ -13,8 +13,10 @@ export default {
       });
     }
 
+    const rangeHeader = request.headers.get("range");
+
     const object = await env.MEDIA_BUCKET.get(key, {
-      range: request.headers,
+      range: rangeHeader ? request.headers : undefined,
       onlyIf: request.headers,
     });
 
@@ -30,7 +32,7 @@ export default {
     headers.set("Cache-Control", "public, max-age=31536000, immutable");
     headers.set("Accept-Ranges", "bytes");
 
-    if (object.range) {
+    if (rangeHeader && object.range) {
       const { offset, length } = object.range;
       headers.set("Content-Range", `bytes ${offset}-${offset + length - 1}/${object.size}`);
       headers.set("Content-Length", `${length}`);

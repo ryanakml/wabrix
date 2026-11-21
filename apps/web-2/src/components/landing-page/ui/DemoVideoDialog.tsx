@@ -2,7 +2,12 @@
 
 import * as React from 'react';
 import Link from 'next/link';
-import { RiPlayFill, RiArrowRightLine, RiSparklingLine, RiGithubFill } from '@remixicon/react';
+import {
+  RiPlayFill,
+  RiArrowRightLine,
+  RiSparklingLine,
+  RiGithubFill,
+} from '@remixicon/react';
 import {
   Dialog,
   DialogContent,
@@ -19,27 +24,44 @@ interface DemoVideoDialogProps {
 
 export function DemoVideoDialog({ children, videoUrl }: DemoVideoDialogProps) {
   const [isOpen, setIsOpen] = React.useState(false);
+  const [isPlaying, setIsPlaying] = React.useState(false);
   const videoRef = React.useRef<HTMLVideoElement>(null);
-  const [videoSrc, setVideoSrc] = React.useState(videoUrl || siteConfig.demoVideo.url);
+  const currentUrl = videoUrl || siteConfig.demoVideo.url;
 
-  // Handle auto-play on open and pause on close
+  // Attempt smooth play when modal opens
   React.useEffect(() => {
-    if (isOpen) {
-      const timer = setTimeout(() => {
-        videoRef.current?.play().catch(() => {
-          // Autoplay blocked by browser policy until user interacts
-        });
-      }, 150);
-      return () => clearTimeout(timer);
-    } else {
-      videoRef.current?.pause();
+    if (isOpen && videoRef.current) {
+      const v = videoRef.current;
+      v.currentTime = 0;
+      
+      const playPromise = v.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            setIsPlaying(true);
+          })
+          .catch(() => {
+            // If browser autoplay policy blocks unmuted playback, mute and retry
+            v.muted = true;
+            v.play()
+              .then(() => setIsPlaying(true))
+              .catch(() => setIsPlaying(false));
+          });
+      }
+    } else if (!isOpen && videoRef.current) {
+      videoRef.current.pause();
+      setIsPlaying(false);
     }
   }, [isOpen]);
 
-  const handleVideoError = () => {
-    // If remote CDN fails, fallback to local static copy
-    if (videoSrc !== '/videos/wabrix-demo.mp4') {
-      setVideoSrc('/videos/wabrix-demo.mp4');
+  const handleManualPlay = () => {
+    if (videoRef.current) {
+      if (videoRef.current.paused) {
+        videoRef.current.play().then(() => setIsPlaying(true)).catch(() => {});
+      } else {
+        videoRef.current.pause();
+        setIsPlaying(false);
+      }
     }
   };
 
@@ -84,19 +106,33 @@ export function DemoVideoDialog({ children, videoUrl }: DemoVideoDialogProps) {
         </div>
 
         {/* 16:9 Video Canvas */}
-        <div className="relative aspect-video w-full bg-black">
+        <div className="relative aspect-video w-full bg-black group">
           <video
+            key={currentUrl}
             ref={videoRef}
-            src={videoSrc}
-            onError={handleVideoError}
+            src={currentUrl}
             controls
             playsInline
-            preload="metadata"
-            poster={siteConfig.demoVideo.poster}
+            preload="auto"
+            onPlay={() => setIsPlaying(true)}
+            onPause={() => setIsPlaying(false)}
+            onEnded={() => setIsPlaying(false)}
             className="w-full h-full object-contain"
           >
             Your browser does not support HTML5 video playback.
           </video>
+
+          {/* Big Center Play Button Overlay when paused */}
+          {!isPlaying && (
+            <div
+              onClick={handleManualPlay}
+              className="absolute inset-0 flex items-center justify-center bg-black/30 backdrop-blur-[2px] cursor-pointer transition-opacity"
+            >
+              <div className="flex size-16 items-center justify-center rounded-full bg-violet-600/90 text-white shadow-2xl transition-transform hover:scale-110 active:scale-95 border border-violet-400/50">
+                <RiPlayFill className="size-8 fill-current ml-1" />
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Action Footer */}
