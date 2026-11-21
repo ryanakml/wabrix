@@ -22,11 +22,11 @@ export const docsPages: DocPage[] = [
     category: 'Getting started',
     eyebrow: 'Setup',
     intro:
-      'Use this checklist to move from first sign-in to a production-ready workspace without skipping access control or message-delivery basics.',
+      'Use this checklist to move from first sign-in to a working demo workspace without skipping access control or message-delivery basics.',
     highlights: [
       'Sign in, join or create the correct organization, and confirm who can manage integrations.',
       'Connect the active bot, WhatsApp credentials, and webhook before enabling message transport.',
-      'Load knowledge sources, prompts, and routing rules before sending live outbound traffic.'
+      'Load knowledge sources, prompts, and routing rules before connecting a real WhatsApp number in your own deployment.'
     ],
     sections: [
       {
@@ -40,11 +40,11 @@ export const docsPages: DocPage[] = [
         title: '2. Connect the operational pieces',
         body: [
           'Wabrix is designed around a shared inbox, bot configuration, knowledge sources, and a WhatsApp integration layer. Configure those pieces in that order so routing and replies have usable context.',
-          'Before enabling live transport, verify the active bot, credentials, and webhook settings are all configured for the same workspace.'
+          'Before connecting a real WhatsApp number, verify the active bot, credentials, and webhook settings are all configured for the same workspace.'
         ]
       },
       {
-        title: '3. Validate before launch',
+        title: '3. Validate before connecting traffic',
         body: [
           'Check that message templates are available for conversations outside the 24-hour service window.',
           'Run a small internal test flow first, then review conversation details, queue status, and operational logs before widening access.'
@@ -63,21 +63,21 @@ export const docsPages: DocPage[] = [
     highlights: [
       'Conversation details already expose lifecycle fields such as connection, webhook, approval, OTP, and profile sync status.',
       'A working phone number ID and business account ID are part of the operational baseline.',
-      'Lifecycle issues should be resolved before scaling live traffic or relying on automation.'
+      'Lifecycle issues should be resolved before connecting live traffic in your own deployment or relying on automation.'
     ],
     sections: [
       {
         title: 'Connection and webhook state',
         body: [
           'The integration must stay connected and the webhook must continue receiving status and message events. If either state drifts, message delivery and template sync become unreliable.',
-          'Treat webhook health as a production dependency, not a one-time setup step.'
+          'Treat webhook health as a core dependency, not a one-time setup step.'
         ]
       },
       {
         title: 'Approval and OTP checkpoints',
         body: [
           'Approval status and OTP status affect whether a number is ready for live use or still waiting on external verification steps.',
-          'Resolve outstanding approval tasks early so launch timelines are not blocked by platform review work.'
+          'Resolve outstanding approval tasks early so setup timelines are not blocked by platform review work.'
         ]
       },
       {

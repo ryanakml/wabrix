@@ -53,10 +53,11 @@ export default function SecurityPage() {
             Security
           </p>
           <h1 className='max-w-4xl text-4xl font-semibold tracking-tight text-gray-900 md:text-5xl'>
-            Practical safeguards for teams running WhatsApp operations.
+            Practical safeguards in the Wabrix demo.
           </h1>
           <p className='max-w-3xl text-lg leading-8 text-gray-600'>
-            Wabrix is designed for operational clarity: authenticated access, protected workspace
+            Wabrix is a personal portfolio project and live demo, not a commercial service. This
+            page describes how the demo implements authenticated access, protected workspace
             routes, auditable activity, and explicit limits around messaging policy and downstream
             processing.
           </p>

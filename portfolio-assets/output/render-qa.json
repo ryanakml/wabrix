@@ -1,0 +1,194 @@
+{
+  "desktop": {
+    "canvas": {
+      "width": 2250,
+      "height": 1000
+    },
+    "frame": {
+      "x": 260,
+      "y": 145,
+      "width": 1730,
+      "height": 710
+    },
+    "fontsLoaded": true,
+    "imagesLoaded": true,
+    "bounds": {
+      ".desktop .brand": {
+        "x": 330,
+        "y": 169.84375,
+        "width": 370,
+        "height": 88.328125
+      },
+      ".desktop .source .ui-title": {
+        "x": 330,
+        "y": 313,
+        "width": 738,
+        "height": 56.15625
+      },
+      ".desktop .source-card": {
+        "x": 330,
+        "y": 481,
+        "width": 738,
+        "height": 170
+      },
+      ".desktop .preview-card": {
+        "x": 330,
+        "y": 714,
+        "width": 738,
+        "height": 103
+      },
+      ".desktop .emulator .ui-title": {
+        "x": 1166,
+        "y": 313,
+        "width": 756,
+        "height": 56.15625
+      },
+      ".desktop .prompt-card": {
+        "x": 1166,
+        "y": 481,
+        "width": 756,
+        "height": 69
+      },
+      ".desktop .emulator .response-card": {
+        "x": 1166,
+        "y": 678,
+        "width": 756,
+        "height": 80
+      },
+      ".desktop .retrieval": {
+        "x": 1166,
+        "y": 765,
+        "width": 756,
+        "height": 38
+      },
+      ".desktop .source-used": {
+        "x": 1166,
+        "y": 805,
+        "width": 188.984375,
+        "height": 38
+      }
+    }
+  },
+  "tablet": {
+    "canvas": {
+      "width": 2250,
+      "height": 1000
+    },
+    "frame": {
+      "x": 250,
+      "y": 145,
+      "width": 1750,
+      "height": 710
+    },
+    "fontsLoaded": true,
+    "imagesLoaded": true,
+    "bounds": {
+      ".tablet .brand": {
+        "x": 322,
+        "y": 165.640625,
+        "width": 380,
+        "height": 90.71875
+      },
+      ".tablet .source .ui-title": {
+        "x": 322,
+        "y": 312,
+        "width": 760,
+        "height": 68.03125
+      },
+      ".tablet .source-card": {
+        "x": 322,
+        "y": 414.03125,
+        "width": 760,
+        "height": 370
+      },
+      ".tablet .policy-copy": {
+        "x": 361,
+        "y": 669.03125,
+        "width": 688,
+        "height": 108.46875
+      },
+      ".tablet .emulator .ui-title": {
+        "x": 1152,
+        "y": 312,
+        "width": 780,
+        "height": 68.03125
+      },
+      ".tablet .prompt-card": {
+        "x": 1152,
+        "y": 462.03125,
+        "width": 780,
+        "height": 81
+      },
+      ".tablet .emulator .response-card": {
+        "x": 1152,
+        "y": 621.03125,
+        "width": 780,
+        "height": 113
+      },
+      ".tablet .match": {
+        "x": 1152,
+        "y": 746.03125,
+        "width": 780,
+        "height": 48
+      }
+    }
+  },
+  "mobile": {
+    "canvas": {
+      "width": 2250,
+      "height": 1000
+    },
+    "frame": {
+      "x": 225,
+      "y": 130,
+      "width": 1800,
+      "height": 740
+    },
+    "fontsLoaded": true,
+    "imagesLoaded": true,
+    "bounds": {
+      ".mobile .brand": {
+        "x": 289,
+        "y": 186,
+        "width": 410,
+        "height": 97.890625
+      },
+      ".mobile .channel": {
+        "x": 1445.171875,
+        "y": 194,
+        "width": 512.828125,
+        "height": 106
+      },
+      ".mobile .relation-label": {
+        "x": 778,
+        "y": 355,
+        "width": 700,
+        "height": 104
+      },
+      ".mobile .source .card-heading": {
+        "x": 335,
+        "y": 503,
+        "width": 658,
+        "height": 209.71875
+      },
+      ".mobile .source .card-body": {
+        "x": 335,
+        "y": 745.71875,
+        "width": 658,
+        "height": 103.875
+      },
+      ".mobile .emulator .card-heading": {
+        "x": 1207,
+        "y": 503,
+        "width": 717,
+        "height": 102.890625
+      },
+      ".mobile .emulator .card-body": {
+        "x": 1207,
+        "y": 632.890625,
+        "width": 717,
+        "height": 205.78125
+      }
+    }
+  }
+}

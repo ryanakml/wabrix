@@ -19,8 +19,8 @@ export const legalDocuments: Record<LegalDocumentType, LegalDocument> = {
     label: 'Terms of Service',
     title: 'Wabrix Terms of Service',
     summary:
-      'These terms govern access to Wabrix for WhatsApp automation, inbox operations, bot configuration, and knowledge-driven replies.',
-    updatedAt: 'April 28, 2026',
+      'Demo notice: Wabrix is a personal portfolio project and live demo, not a commercial service. These terms describe the intended use of the demo only. There are no customers, subscriptions, or paid support.',
+    updatedAt: 'November 19, 2026',
     sections: [
       {
         title: 'Service Scope',
@@ -39,7 +39,7 @@ export const legalDocuments: Record<LegalDocumentType, LegalDocument> = {
       {
         title: 'Templates and Service Windows',
         body: [
-          'When the customer service window is closed, outbound messaging must use an approved WhatsApp template. Wabrix may expose template tools, but compliance, submission quality, and production usage remain your responsibility.',
+          'When the customer service window is closed, outbound messaging must use an approved WhatsApp template. Wabrix may expose template tools, but compliance, submission quality, and real-world usage remain your responsibility.',
           'If Meta limits, rejects, or blocks a template, phone number, or business account, Wabrix is not responsible for the operational impact of that external platform decision.'
         ]
       },
@@ -54,7 +54,7 @@ export const legalDocuments: Record<LegalDocumentType, LegalDocument> = {
         title: 'Availability, Security, and Suspension',
         body: [
           'Keep your workspace credentials, access tokens, and integration secrets protected. Activity performed through your workspace is treated as authorized by your team unless reported otherwise.',
-          'We may restrict access, pause integrations, or remove abusive content when needed to protect the service, other tenants, provider relationships, or policy compliance.'
+          'The demo operator may restrict access, pause integrations, or remove abusive content when needed to protect the demo, provider relationships, or policy compliance.'
         ]
       }
     ],
@@ -65,8 +65,8 @@ export const legalDocuments: Record<LegalDocumentType, LegalDocument> = {
     label: 'Privacy Policy',
     title: 'Wabrix Privacy Policy',
     summary:
-      'This policy explains how Wabrix handles account, conversation, and integration data used to run WhatsApp chatbot workflows.',
-    updatedAt: 'April 28, 2026',
+      'Demo notice: Wabrix is a personal portfolio project and live demo, not a commercial service. This policy explains how the demo handles account, conversation, and integration data.',
+    updatedAt: 'November 19, 2026',
     sections: [
       {
         title: 'Data We Collect',
@@ -105,6 +105,6 @@ export const legalDocuments: Record<LegalDocumentType, LegalDocument> = {
       }
     ],
     footer:
-      'For privacy or data-handling questions, use the support channel or workspace administrator configured for your Wabrix deployment.'
+      'For privacy or data-handling questions about this demo, open an issue at github.com/ryanakml/wabrix.'
   }
 };

@@ -43,13 +43,13 @@ export default function SignInViewPage() {
           )}
         />
         <div className='text-sidebar-foreground relative z-20 mt-auto'>
-          <blockquote className='space-y-2'>
+          <div className='space-y-2'>
             <p className='text-lg'>
-              &ldquo;Keep every WhatsApp conversation compliant, context-aware, and ready for the
-              next reply window without losing operational control.&rdquo;
+              Keep WhatsApp conversations context-aware and ready for the next reply window
+              without losing operational control.
             </p>
-            <footer className='text-sidebar-foreground/70 text-sm'>Wabrix platform</footer>
-          </blockquote>
+            <p className='text-sidebar-foreground/70 text-sm'>Wabrix portfolio demo</p>
+          </div>
         </div>
       </div>
       <div className='flex h-full items-center justify-center p-4 lg:p-8'>

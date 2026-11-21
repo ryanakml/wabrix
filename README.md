@@ -1,5 +1,15 @@
 # Wabrix
 
+## Status
+
+This is a personal portfolio project and live demo, not a commercial product. It has no external customers or users.
+
+- Hosted demo: [wabrix.nylo.me](https://wabrix.nylo.me)
+- Source: [github.com/ryanakml/wabrix](https://github.com/ryanakml/wabrix)
+- Re-architecture: [github.com/ryanakml/wabrix-ai](https://github.com/ryanakml/wabrix-ai) rebuilds the same product on Express 5, PostgreSQL, and React/Vite with a transactional outbox. The hosted demo runs this repository, not `wabrix-ai`.
+
+The sections below describe the implemented code. They are not customer case studies, usage claims, or commercial offers.
+
 <p align="left">
    <img alt="Next.js" src="https://img.shields.io/badge/Next.js-16-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" />
    <img alt="React" src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=0B1220" />
@@ -16,6 +26,8 @@
 
 ![Wabrix banner](apps/web-2/public/banner.png)
 
+*Illustrative dashboard mockup with sample data. Wabrix has no external customers.*
+
 Wabrix is a WhatsApp-first AI customer communication platform that combines an automated, knowledge-grounded bot with a real-time operator inbox.
 
 Wabrix helps teams handle more WhatsApp conversations without losing quality.
@@ -26,7 +38,7 @@ Wabrix helps teams handle more WhatsApp conversations without losing quality.
 
 ## What Wabrix is
 
-Wabrix is a multi-tenant SaaS for businesses that run support and sales on WhatsApp:
+Wabrix is a multi-tenant SaaS-style application for teams that run support and sales on WhatsApp:
 
 - **Bot Studio** to configure bot behavior (instructions, language, safety/guardrails) per organization.
 - **Knowledge Base** to ingest inline text, websites, and files, then retrieve relevant chunks at reply time.
@@ -88,7 +100,8 @@ sequenceDiagram
 
 ## Repository layout
 
-- `apps/web`: Next.js dashboard (Bot Studio, Inbox, Knowledge Base, Billing, Analytics).
+- `apps/web-2`: Next.js app behind the hosted demo (landing page, docs, pricing, workspace, and dashboard).
+- `apps/web`: Additional Next.js dashboard variant (Bot Studio, Inbox, Knowledge Base, Billing, Analytics).
 - `apps/ingress`: Cloudflare Worker for Meta webhooks and event durability.
 - `packages/backend`: Convex functions (auth sync, WhatsApp processing, orchestration, knowledge ingestion, outbound delivery, billing).
 - `packages/ui`: shared UI components.
@@ -142,9 +155,10 @@ From the repo root:
 pnpm dev
 ```
 
-This starts the Next.js app and the Cloudflare Worker dev server (via Turborepo).
+This starts the Next.js apps and the Cloudflare Worker dev server (via Turborepo).
 
-- Web: `http://localhost:3000`
+- Hosted-demo app (`apps/web-2`): `http://localhost:3001`
+- Dashboard app (`apps/web`): `http://localhost:3000`
 - Ingress (Wrangler): typically `http://localhost:8787`
 
 ## Useful commands
