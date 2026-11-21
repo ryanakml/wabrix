@@ -7,7 +7,7 @@ export const siteConfig = {
   demoVideo: {
     url:
       process.env.NEXT_PUBLIC_DEMO_VIDEO_URL ||
-      'https://pub-69e96f6ae01945ec9e55ee688de1ef05.r2.dev/wabrix-demo.mp4',
+      'https://wabrix-media.wabrix-ingress-staging.workers.dev/wabrix-demo.mp4',
     poster: '/images/wabrix_cta_landscape.png',
     duration: '0:45',
   },

@@ -20,7 +20,7 @@ interface DemoVideoDialogProps {
 export function DemoVideoDialog({ children, videoUrl }: DemoVideoDialogProps) {
   const [isOpen, setIsOpen] = React.useState(false);
   const videoRef = React.useRef<HTMLVideoElement>(null);
-  const activeUrl = videoUrl || siteConfig.demoVideo.url;
+  const [videoSrc, setVideoSrc] = React.useState(videoUrl || siteConfig.demoVideo.url);
 
   // Handle auto-play on open and pause on close
   React.useEffect(() => {
@@ -35,6 +35,13 @@ export function DemoVideoDialog({ children, videoUrl }: DemoVideoDialogProps) {
       videoRef.current?.pause();
     }
   }, [isOpen]);
+
+  const handleVideoError = () => {
+    // If remote CDN fails, fallback to local static copy
+    if (videoSrc !== '/videos/wabrix-demo.mp4') {
+      setVideoSrc('/videos/wabrix-demo.mp4');
+    }
+  };
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
@@ -80,7 +87,8 @@ export function DemoVideoDialog({ children, videoUrl }: DemoVideoDialogProps) {
         <div className="relative aspect-video w-full bg-black">
           <video
             ref={videoRef}
-            src={activeUrl}
+            src={videoSrc}
+            onError={handleVideoError}
             controls
             playsInline
             preload="metadata"
