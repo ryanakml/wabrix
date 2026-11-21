@@ -1,0 +1,24 @@
+{
+  "name": "@wabrix/video",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "remotion preview src/index.ts",
+    "render": "remotion render src/index.ts WabrixDemo16x9 out/wabrix-demo.mp4",
+    "render:vertical": "remotion render src/index.ts WabrixDemoVertical out/wabrix-demo-vertical.mp4",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.545",
+    "@remotion/tailwind": "4.0.545",
+    "lucide-react": "^0.474.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "remotion": "4.0.545"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "typescript": "5.7.2"
+  }
+}

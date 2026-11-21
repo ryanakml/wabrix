@@ -8,7 +8,9 @@
     "typecheck": "turbo run typecheck",
     "test": "turbo run test",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "video:dev": "pnpm --filter @wabrix/video dev",
+    "video:render": "pnpm --filter @wabrix/video render"
   },
   "devDependencies": {
     "prettier": "^3.7.4",
