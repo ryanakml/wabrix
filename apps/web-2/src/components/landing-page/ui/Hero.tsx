@@ -4,6 +4,7 @@ import { siteConfig } from "@/app/siteConfig"
 import { FadeContainer, FadeDiv } from "../Fade"
 import GameOfLife from "./HeroBackground"
 import { HeroInboxShowcase } from "./HeroInboxShowcase"
+import { DemoVideoDialog } from "./DemoVideoDialog"
 
 export function Hero() {
   return (
@@ -48,6 +49,7 @@ export function Hero() {
           >
             Open the demo
           </Link>
+          <DemoVideoDialog />
           <a
             className="inline-flex cursor-pointer items-center justify-center gap-1.5 rounded-lg border border-gray-300 bg-white px-5 py-2.5 text-sm font-medium text-gray-700 shadow-sm transition-colors hover:bg-gray-50 focus:outline-hidden focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
             href={siteConfig.repositories.current}
