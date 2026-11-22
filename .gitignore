@@ -32,6 +32,7 @@ dist
 # Agents
 .agents/
 .claude/
+.taste-skill/
 
 
 # Debug

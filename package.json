@@ -11,7 +11,9 @@
     "format:check": "prettier --check .",
     "video:dev": "pnpm --filter @wabrix/video dev",
     "video:render": "pnpm --filter @wabrix/video render",
-    "video:upload": "pnpm --filter @wabrix/video upload"
+    "video:upload": "pnpm --filter @wabrix/video upload",
+    "taste:copy-lint": "node .agents/skills/design-taste-frontend/scripts/copy-lint.mjs apps/web-2/src/components/landing-page/ui/*.tsx \"apps/web-2/src/app/(public)/page.tsx\" --kind software",
+    "taste:gate": "node .agents/skills/design-taste-frontend/scripts/gate.mjs"
   },
   "devDependencies": {
     "prettier": "^3.7.4",

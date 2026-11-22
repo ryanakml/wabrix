@@ -19,10 +19,10 @@ export function Hero() {
           >
             <div className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white/80 px-3 py-1 text-xs font-medium text-gray-800 shadow-xs backdrop-blur-xs transition-colors hover:border-violet-300 hover:bg-violet-50/50">
               <span className="rounded-full bg-violet-100 px-2 py-0.5 text-[11px] font-semibold text-violet-700">
-                AI Model
+                AI Engine
               </span>
               <span className="flex items-center gap-1 text-gray-700">
-                Gemini 2.5 Flash integration
+                Gemini 2.5 Flash grounded retrieval
                 <RiArrowRightUpLine className="size-3.5 text-gray-400" />
               </span>
             </div>
@@ -41,7 +41,7 @@ export function Hero() {
           one-click handoff.
         </p>
 
-        {/* CTA Buttons */}
+        {/* CTA Buttons - Two clear actions per taste-skill standard */}
         <FadeDiv className="mt-7 flex flex-wrap items-center justify-center gap-3">
           <Link
             className="inline-flex cursor-pointer items-center justify-center rounded-lg bg-violet-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-violet-700 focus:outline-hidden focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
@@ -49,23 +49,27 @@ export function Hero() {
           >
             Open the demo
           </Link>
-          <DemoVideoDialog />
-          <a
-            className="inline-flex cursor-pointer items-center justify-center gap-1.5 rounded-lg border border-gray-300 bg-white px-5 py-2.5 text-sm font-medium text-gray-700 shadow-sm transition-colors hover:bg-gray-50 focus:outline-hidden focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
-            href={siteConfig.repositories.current}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <RiGithubFill className="size-4" />
-            View on GitHub
-          </a>
           <Link
-            className="inline-flex cursor-pointer items-center justify-center rounded-lg px-4 py-2.5 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
+            className="inline-flex cursor-pointer items-center justify-center gap-1.5 rounded-lg border border-gray-300 bg-white px-5 py-2.5 text-sm font-medium text-gray-700 shadow-sm transition-colors hover:bg-gray-50 focus:outline-hidden focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
             href={siteConfig.baseLinks.setup}
           >
             Read setup docs
           </Link>
         </FadeDiv>
+
+        <div className="mt-4 flex items-center justify-center gap-4 text-xs text-gray-500">
+          <DemoVideoDialog />
+          <span className="text-gray-300">•</span>
+          <a
+            className="inline-flex items-center gap-1 text-gray-600 hover:text-gray-900 transition-colors"
+            href={siteConfig.repositories.current}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <RiGithubFill className="size-3.5" />
+            <span>GitHub repository</span>
+          </a>
+        </div>
 
 
         {/* Real Product Showcase (WhatsApp Messenger) */}

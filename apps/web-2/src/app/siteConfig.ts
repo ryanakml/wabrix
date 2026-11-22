@@ -23,7 +23,8 @@ export const siteConfig = {
   },
   repositories: {
     current: 'https://github.com/ryanakml/wabrix',
-    rearchitecture: 'https://github.com/ryanakml/wabrix-ai'
+    rearchitecture: 'https://flowdesk.nylo.me/',
+    flowdesk: 'https://flowdesk.nylo.me/'
   }
 } as const;
 

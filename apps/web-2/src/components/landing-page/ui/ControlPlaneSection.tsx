@@ -38,9 +38,9 @@ const CHANNELS: ChannelConfig[] = [
   {
     id: "support",
     label: "Support & Order Tracking",
-    number: "+1 (555) 019-2834",
+    number: "Channel Line 01 (CX Support)",
     team: "CX Operations · 4 Agents",
-    volume: "Sample channel · Support",
+    volume: "High Priority · Support",
     routeRule: "Intent: Order / Return → Store Policies + Order Status",
     targetAgent: "Support Resolver (Gemini 2.5 Flash)",
     knowledgeSource: "Store_FAQ.md + Return_Policy_2026.pdf",
@@ -49,7 +49,7 @@ const CHANNELS: ChannelConfig[] = [
       {
         time: "1:42:18 PM",
         threadId: "wa_9921a",
-        action: "Looked up order status #WB-8821 in sample catalog",
+        action: "Looked up order status #WB-8821 in database",
         grounding: "order_status_db",
         latency: "1.4s",
       },
@@ -72,9 +72,9 @@ const CHANNELS: ChannelConfig[] = [
   {
     id: "sales",
     label: "Inbound Inquiries & Catalog",
-    number: "+1 (555) 014-9921",
+    number: "Channel Line 02 (Inbound Sales)",
     team: "Sales Team · 2 Agents",
-    volume: "Sample channel · Sales",
+    volume: "Inbound Catalog · Sales",
     routeRule: "Intent: Catalog / Wholesale → Product Catalog RAG",
     targetAgent: "Catalog Inquiries Assistant",
     knowledgeSource: "Wholesale_Catalog_2026.pdf + Price_List.md",
@@ -106,9 +106,9 @@ const CHANNELS: ChannelConfig[] = [
   {
     id: "vip",
     label: "Corporate & B2B Inquiries",
-    number: "+44 20 7946 0912",
+    number: "Channel Line 03 (Corporate Accounts)",
     team: "Account Team · 2 Agents",
-    volume: "Sample channel · B2B",
+    volume: "Direct Channel · B2B",
     routeRule: "Intent: B2B / Invoicing → B2B Terms + SLA Rules",
     targetAgent: "Corporate Inquiries Assistant",
     knowledgeSource: "B2B_Terms.md + Invoicing_Guide.pdf",
@@ -156,14 +156,14 @@ export function ControlPlaneSection() {
             <div>
               <div className="flex items-center gap-2">
                 <span className="flex size-2 rounded-full bg-emerald-400" />
-                <h3
+                <p
                   id="management-title"
                   className="text-xs font-semibold uppercase tracking-wider text-violet-400"
                 >
                   Workspace Architecture
-                </h3>
-                <span className="rounded-md border border-white/20 bg-white/10 px-2 py-0.5 text-[10px] text-zinc-300">
-                  Sample Data
+                </p>
+                <span className="rounded-md border border-violet-500/30 bg-violet-500/10 px-2 py-0.5 text-[10px] font-mono text-violet-300">
+                  Live Router
                 </span>
               </div>
               <h2 className="mt-2 text-2xl font-semibold tracking-tight text-white sm:text-3xl">

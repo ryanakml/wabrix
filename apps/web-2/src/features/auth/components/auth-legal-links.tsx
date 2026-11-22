@@ -16,12 +16,12 @@ export function AuthLegalLinks() {
 
   return (
     <>
-      <p className='text-muted-foreground px-8 text-center text-sm'>
+      <p className='text-muted-foreground px-6 text-center text-xs leading-relaxed'>
         By clicking continue, you agree to our{' '}
         <button
           type='button'
           onClick={() => setOpenDocument('terms')}
-          className='hover:text-primary underline underline-offset-4'
+          className='text-foreground hover:text-violet-600 underline underline-offset-4 transition-colors font-medium cursor-pointer'
         >
           Terms of Service
         </button>{' '}
@@ -29,14 +29,14 @@ export function AuthLegalLinks() {
         <button
           type='button'
           onClick={() => setOpenDocument('privacy')}
-          className='hover:text-primary underline underline-offset-4'
+          className='text-foreground hover:text-violet-600 underline underline-offset-4 transition-colors font-medium cursor-pointer'
         >
           Privacy Policy
         </button>
         .
       </p>
 
-      <Dialog open={openDocument !== null} onOpenChange={(open) => !open && setOpenDocument(null)}>
+      <Dialog open={openDocument !== null} onOpenChange={(open) => { if (!open) setOpenDocument(null); }}>
         {activeDocument ? (
           <DialogContent className='border-border bg-card text-card-foreground max-h-[85vh] max-w-2xl overflow-hidden p-0 sm:max-w-2xl'>
             <DialogHeader className='border-border border-b px-6 pt-6 pb-4 text-left'>

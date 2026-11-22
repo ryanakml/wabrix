@@ -58,12 +58,12 @@ export default function Features() {
 
       {/* Section Header */}
       <div className="text-center px-4">
-        <h2 className="text-xs font-semibold uppercase tracking-wider text-violet-600">
+        <p className="text-xs font-semibold uppercase tracking-wider text-violet-600">
           Core Capabilities
-        </h2>
-        <p className="mt-3 text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
-          Built for small WhatsApp support operations
         </p>
+        <h2 className="mt-3 text-3xl font-semibold tracking-tight text-gray-950 sm:text-4xl md:text-5xl">
+          Built for small WhatsApp support operations
+        </h2>
         <p className="mt-4 max-w-2xl mx-auto text-base text-gray-600 leading-relaxed">
           A shared workspace where AI answers routine questions using verified
           documents, and human operators maintain full oversight through a common inbox.
@@ -90,19 +90,19 @@ export default function Features() {
 
             <ul className="mt-6 space-y-3 text-xs text-gray-600">
               <li className="flex items-center gap-2">
-                <span className="flex size-5 items-center justify-center rounded-full bg-violet-100 text-violet-700">
+                <span className="flex size-5 items-center justify-center rounded-full bg-violet-100 text-violet-700 font-semibold">
                   ✓
                 </span>
                 <span>Markdown & PDF ingestion with token-aware chunking</span>
               </li>
               <li className="flex items-center gap-2">
-                <span className="flex size-5 items-center justify-center rounded-full bg-violet-100 text-violet-700">
+                <span className="flex size-5 items-center justify-center rounded-full bg-violet-100 text-violet-700 font-semibold">
                   ✓
                 </span>
                 <span>Bot Emulator preview to test prompts before live deployment</span>
               </li>
               <li className="flex items-center gap-2">
-                <span className="flex size-5 items-center justify-center rounded-full bg-violet-100 text-violet-700">
+                <span className="flex size-5 items-center justify-center rounded-full bg-violet-100 text-violet-700 font-semibold">
                   ✓
                 </span>
                 <span>Grounded citations tagged directly on generated messages</span>
@@ -120,10 +120,6 @@ export default function Features() {
                 className="w-full rounded-lg object-contain"
                 priority
               />
-              <div className="mt-2 text-center text-[11px] text-gray-500">
-                Wabrix Knowledge Base &amp; Bot Emulator — grounded knowledge
-                retrieval with verified source citations.
-              </div>
             </div>
           </div>
         </div>

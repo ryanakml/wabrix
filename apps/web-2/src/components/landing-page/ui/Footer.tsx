@@ -25,8 +25,8 @@ const Footer = () => {
           external: true,
         },
         {
-          label: "wabrix-ai (Express + PostgreSQL)",
-          href: siteConfig.repositories.rearchitecture,
+          label: "FlowDesk",
+          href: siteConfig.repositories.flowdesk,
           external: true,
         },
       ],

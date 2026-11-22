@@ -68,12 +68,12 @@ export function PricingPageView() {
                 </a>
                 . The Express and PostgreSQL re-architecture is at{' '}
                 <a
-                  href={siteConfig.repositories.rearchitecture}
+                  href={siteConfig.repositories.flowdesk}
                   target='_blank'
                   rel='noopener noreferrer'
                   className='font-medium text-gray-700 underline underline-offset-4 hover:text-gray-900'
                 >
-                  github.com/ryanakml/wabrix-ai
+                  FlowDesk
                 </a>
                 .
               </p>

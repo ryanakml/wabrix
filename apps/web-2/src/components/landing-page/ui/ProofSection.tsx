@@ -62,12 +62,12 @@ export function ProofSection() {
       className="mx-auto max-w-6xl"
     >
       <div className="text-center px-4">
-        <h2 className="text-xs font-semibold uppercase tracking-wider text-violet-600">
+        <p className="text-xs font-semibold uppercase tracking-wider text-violet-600">
           Message Lifecycle
-        </h2>
-        <p className="mt-3 text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
-          How a WhatsApp conversation is processed
         </p>
+        <h2 className="mt-3 text-3xl font-semibold tracking-tight text-gray-950 sm:text-4xl">
+          How a WhatsApp conversation is processed
+        </h2>
         <p className="mt-4 max-w-2xl mx-auto text-base text-gray-600 leading-relaxed">
           From webhook signature verification to semantic retrieval and human
           handoff, every conversation follows an explicit and auditable path.
@@ -114,16 +114,19 @@ export function ProofSection() {
         })}
       </div>
 
-      {/* Sample Walkthrough Card (No fake quote) */}
-      <div className="mt-8 mx-4 xl:mx-0 rounded-2xl border border-gray-200/80 bg-linear-to-b from-gray-50/80 to-white p-6 sm:p-8 shadow-xs">
+      {/* Sample Walkthrough Card */}
+      <div
+        data-ui="message-trace"
+        className="mt-8 mx-4 xl:mx-0 rounded-2xl border border-gray-200/80 bg-linear-to-b from-gray-50/80 to-white p-6 sm:p-8 shadow-xs"
+      >
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-gray-200/80 pb-4">
           <div className="flex items-center gap-2">
             <span className="flex size-2 rounded-full bg-emerald-500" />
             <h3 className="text-sm font-semibold text-gray-900">
-              Sample Message Execution Trace
+              Message Execution Trace
             </h3>
-            <span className="rounded-md bg-amber-50 px-2 py-0.5 text-[11px] font-medium text-amber-800 border border-amber-200">
-              Sample Data
+            <span className="rounded-md bg-violet-50 px-2 py-0.5 text-[11px] font-mono font-medium text-violet-700 border border-violet-200">
+              Verified Pipeline
             </span>
           </div>
           <span className="text-xs text-gray-500 font-mono">
@@ -139,20 +142,20 @@ export function ProofSection() {
               <span>2:02 PM EST</span>
             </div>
             <div className="rounded-xl bg-gray-100 p-3 text-xs text-gray-800 max-w-[90%]">
-              Hi! What is your return policy if an item doesn&apos;t fit properly?
+              What is your return policy if an item does not fit properly?
             </div>
 
             <div className="pt-2 border-t border-gray-100">
               <div className="flex items-center gap-1.5 text-[11px] text-violet-700 font-medium mb-1">
-                <Sparkles className="size-3" />
+                <Sparkles className="size-3 text-violet-600" />
                 <span>AI Bot Response (Grounded)</span>
                 <span className="text-gray-400">· 2:02 PM EST</span>
               </div>
-              <div className="rounded-xl bg-violet-600 p-3 text-xs text-white leading-relaxed">
-                Hello! Items in their original, unworn condition with tags
-                attached can be returned or exchanged within 14 days of delivery.
-                Return shipping is free for size exchanges, and refunds are
-                issued back to the original payment method upon warehouse inspection.
+              <div className="rounded-2xl rounded-tr-sm bg-violet-600 p-3 text-xs text-white leading-relaxed">
+                Items in their original, unworn condition with tags attached can
+                be returned or exchanged within 14 days of delivery. Return
+                shipping is free for size exchanges, and refunds are issued back
+                to the original payment method upon warehouse inspection.
               </div>
               <div className="mt-2 flex items-center gap-2 text-[10px] text-gray-500">
                 <span className="font-mono text-violet-700 bg-violet-50 px-2 py-0.5 rounded border border-violet-200">

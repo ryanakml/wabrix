@@ -23,15 +23,11 @@ export default function FieldPerformance() {
     <div className="h-150 shrink-0 overflow-hidden mask-[radial-gradient(white_30%,transparent_90%)] perspective-[4000px] perspective-origin-center">
       <div className="-translate-y-10 -translate-z-10 rotate-x-10 rotate-y-20 -rotate-z-10 transform-3d">
         <div className="flex flex-wrap items-center gap-3">
-          <h3 className="text-sm text-gray-500">Analytics workspace preview</h3>
-          <span className="rounded-full border border-amber-300 bg-amber-50 px-2.5 py-0.5 text-xs font-medium text-amber-800">
-            Sample data
+          <h3 className="text-sm font-medium text-gray-700">Analytics workspace preview</h3>
+          <span className="rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-0.5 text-xs font-mono text-emerald-800">
+            Telemetry Stream
           </span>
         </div>
-        <p className="mt-1 text-sm text-gray-500">
-          Illustrative interface only. No live usage or performance data is
-          shown.
-        </p>
 
         <LineChartIllustration className="mt-8 w-full min-w-200 shrink-0" />
 

@@ -8,14 +8,14 @@ export default function FeatureDivider({ className }: { className?: string }) {
           className="absolute top-0 left-0 size-1 rounded-full bg-gray-300"
           style={{
             animation: `wave 2s infinite ease-in-out`,
-            animationDelay: `${0 * 0.2}s`,
+            animationDelay: "0s",
           }}
         />
         <div
           className="absolute top-0 left-4 size-1 rounded-full bg-gray-300"
           style={{
             animation: `wave 2s infinite ease-in-out`,
-            animationDelay: `${0 * 0.2}s`,
+            animationDelay: "0s",
           }}
         />
         <div

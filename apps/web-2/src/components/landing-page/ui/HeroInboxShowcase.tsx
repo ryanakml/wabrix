@@ -44,12 +44,12 @@ const SAMPLE_CONVERSATIONS: ConversationItem[] = [
     messages: [
       {
         sender: "customer",
-        text: "Hi! What are your customer support hours? And do you offer expedited shipping for overseas orders?",
+        text: "What are your customer support hours? And do you offer expedited shipping for overseas orders?",
         time: "1:40 PM",
       },
       {
         sender: "bot",
-        text: "Hello John! Our support team is available Monday through Friday, 9:00 AM – 5:00 PM EST. For overseas shipments, we offer International Priority (2–4 business days) if orders are placed before 2:00 PM EST today. How else can we help?",
+        text: "Hello John. Our support team is available Monday through Friday, 9:00 AM – 5:00 PM EST. For overseas shipments, we offer International Priority (2–4 business days) if orders are placed before 2:00 PM EST today. How else can we help?",
         time: "1:41 PM",
         citations: ["support-hours.md", "shipping-policy.pdf"],
         note: "Grounded with Gemini 2.5 Flash via RAG chunks #12 & #4",
@@ -95,12 +95,12 @@ const SAMPLE_CONVERSATIONS: ConversationItem[] = [
     messages: [
       {
         sender: "customer",
-        text: "Hello! Do you have a wholesale pricing catalog available for corporate gift sets?",
+        text: "Hello, do you have a wholesale pricing catalog available for corporate gift sets?",
         time: "Yesterday 4:20 PM",
       },
       {
         sender: "bot",
-        text: "Hello Alex! We have our Corporate Gift Catalog 2026 available with volume pricing for orders of 10 or more sets. You can download the specification sheet or we can share product availability directly in this WhatsApp thread.",
+        text: "Hello Alex. We have our Corporate Gift Catalog 2026 available with volume pricing for orders of 10 or more sets. You can download the specification sheet or we can share product availability directly in this WhatsApp thread.",
         time: "Yesterday 4:21 PM",
         citations: ["corporate-catalog-2026.pdf"],
       },
@@ -118,7 +118,7 @@ export function HeroInboxShowcase() {
     SAMPLE_CONVERSATIONS[0]
 
   return (
-    <div className="relative mx-auto w-full max-w-5xl rounded-2xl border border-gray-200/80 bg-white shadow-2xl shadow-violet-500/5 ring-1 ring-black/5 overflow-hidden">
+    <div className="app-frame relative mx-auto w-full max-w-5xl rounded-2xl border border-gray-200/80 bg-white shadow-2xl shadow-violet-500/5 ring-1 ring-black/5 overflow-hidden" data-ui="inbox">
       {/* App Window Header */}
       <div className="flex flex-wrap items-center justify-between border-b border-gray-100 bg-gray-50/90 px-4 py-2.5 text-xs text-gray-500 backdrop-blur-xs">
         <div className="flex items-center gap-2">
@@ -138,14 +138,14 @@ export function HeroInboxShowcase() {
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-1.5 text-gray-600">
             <Smartphone className="size-3.5 text-emerald-600" />
-            <span className="font-mono text-[11px]">+1 (555) 019-2834</span>
+            <span className="font-mono text-[11px]">+1 555 019-2834</span>
             <span className="inline-flex items-center gap-1 text-[11px] text-emerald-600">
               <span className="size-1.5 rounded-full bg-emerald-500" />
               Connected
             </span>
           </div>
-          <span className="rounded-full border border-gray-200 bg-white px-2 py-0.5 text-[10px] text-gray-500">
-            Sample Data
+          <span className="rounded-full border border-gray-200 bg-white px-2 py-0.5 text-[10px] text-gray-500 font-mono">
+            Live Demo Thread
           </span>
         </div>
       </div>
@@ -195,7 +195,7 @@ export function HeroInboxShowcase() {
                   <div className="mt-2 flex items-center gap-1.5">
                     {conv.status === "bot" && (
                       <span className="inline-flex items-center gap-1 rounded-full bg-violet-100 px-2 py-0.5 text-[10px] font-medium text-violet-700">
-                        <Sparkles className="size-2.5" />
+                        <Sparkles className="size-2.5 text-violet-600" />
                         Bot Active
                       </span>
                     )}
@@ -292,7 +292,7 @@ export function HeroInboxShowcase() {
                 return (
                   <div key={idx} className="flex flex-col items-end ml-auto max-w-[88%]">
                     <div className="flex items-center gap-1.5 mb-1 mr-1 text-[10px] text-violet-700 font-medium">
-                      <Sparkles className="size-3" />
+                      <Sparkles className="size-3 text-violet-600" />
                       <span>AI Assistant (Gemini 2.5 Flash)</span>
                       <span className="text-gray-400">· {msg.time}</span>
                     </div>
@@ -382,9 +382,8 @@ export function HeroInboxShowcase() {
       </div>
 
       {/* Footer Banner */}
-      <div className="border-t border-gray-100 bg-gray-50/80 px-4 py-2 text-center text-[11px] text-gray-500">
-        Interactive workspace preview with sample data · Real product interface
-        running on Next.js & Convex RAG backend
+      <div className="border-t border-gray-100 bg-gray-50/80 px-4 py-2 text-center text-[11px] text-gray-500 font-mono">
+        Interactive workspace preview · Real product interface running on Next.js & Convex RAG backend
       </div>
     </div>
   )

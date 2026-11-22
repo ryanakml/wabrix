@@ -56,17 +56,17 @@ export default function AboutPage() {
               </p>
               <p>
                 <a
-                  href={siteConfig.repositories.rearchitecture}
+                  href={siteConfig.repositories.flowdesk}
                   target='_blank'
                   rel='noopener noreferrer'
                   className='font-medium text-gray-800 underline decoration-gray-300 underline-offset-4 hover:text-gray-900'
                 >
-                  wabrix-ai
+                  FlowDesk
                 </a>{' '}
                 is a re-architecture of the same product on Express 5,
                 PostgreSQL, and React with Vite, including a transactional
-                outbox. It runs locally with <code>make compose-up</code>. The
-                hosted demo does not run that codebase.
+                outbox. It is hosted at flowdesk.nylo.me. The hosted demo
+                here runs the Convex and Cloudflare Workers codebase.
               </p>
             </div>
           </section>
@@ -111,14 +111,14 @@ export default function AboutPage() {
                 </a>
               </li>
               <li>
-                Re-architecture:{' '}
+                FlowDesk:{' '}
                 <a
-                  href={siteConfig.repositories.rearchitecture}
+                  href={siteConfig.repositories.flowdesk}
                   target='_blank'
                   rel='noopener noreferrer'
                   className='font-medium text-gray-800 underline decoration-gray-300 underline-offset-4 hover:text-gray-900'
                 >
-                  github.com/ryanakml/wabrix-ai
+                  flowdesk.nylo.me
                 </a>
               </li>
               <li>

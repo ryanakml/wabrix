@@ -16,16 +16,16 @@ export function SolarAnalytics() {
       className="relative mx-auto w-full max-w-6xl overflow-hidden"
     >
       <div>
+        <p className="relative scroll-my-24 text-xs font-semibold uppercase tracking-wider text-violet-600">
+          Wabrix Insights
+          <span className="absolute top-0.5 -left-[8px] h-4 w-[2px] rounded-r-sm bg-violet-600" />
+        </p>
         <h2
           id="wabrix-analytics"
-          className="relative scroll-my-24 text-lg font-semibold tracking-tight text-violet-500"
+          className="mt-2 max-w-lg text-3xl font-semibold tracking-tight text-balance text-gray-950 md:text-4xl"
         >
-          Wabrix Insights
-          <div className="absolute top-1 -left-[8px] h-5 w-[3px] rounded-r-sm bg-violet-500" />
-        </h2>
-        <p className="mt-2 max-w-lg text-3xl font-semibold tracking-tighter text-balance text-gray-900 md:text-4xl">
           Review workspace activity and delivery health
-        </p>
+        </h2>
       </div>
       <div className="*:pointer-events-none">
         <AnalyticsIllustration />

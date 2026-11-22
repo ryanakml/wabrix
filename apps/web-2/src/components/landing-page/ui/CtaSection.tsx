@@ -114,15 +114,6 @@ export function CtaSection() {
               >
                 Read setup docs
               </Link>
-              <a
-                href={siteConfig.repositories.current}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors py-2 px-1"
-              >
-                <span>GitHub</span>
-                <ExternalLink className="size-3.5" />
-              </a>
             </div>
 
             <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-zinc-100 pt-6 text-xs font-medium text-zinc-500">
@@ -132,9 +123,16 @@ export function CtaSection() {
                   {signal}
                 </span>
               ))}
+              <a
+                href={siteConfig.repositories.current}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-zinc-600 hover:text-zinc-900 transition-colors"
+              >
+                <span>GitHub Source</span>
+                <ExternalLink className="size-3" />
+              </a>
             </div>
-
-
           </div>
 
           <div className="lg:col-span-6">

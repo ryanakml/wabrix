@@ -6,7 +6,7 @@ This is a personal portfolio project and live demo, not a commercial product. It
 
 - Hosted demo: [wabrix.nylo.me](https://wabrix.nylo.me)
 - Source: [github.com/ryanakml/wabrix](https://github.com/ryanakml/wabrix)
-- Re-architecture: [github.com/ryanakml/wabrix-ai](https://github.com/ryanakml/wabrix-ai) rebuilds the same product on Express 5, PostgreSQL, and React/Vite with a transactional outbox. The hosted demo runs this repository, not `wabrix-ai`.
+- Re-architecture: [FlowDesk](https://flowdesk.nylo.me/) rebuilds the same product on Express 5, PostgreSQL, and React/Vite with a transactional outbox. The hosted demo runs this repository, not FlowDesk.
 
 The sections below describe the implemented code. They are not customer case studies, usage claims, or commercial offers.
 
